@@ -1,5 +1,5 @@
 export interface Livre {
-    numISBN : number,
+    numISBN : string,
     titre?  : string,
     format? : string,
 }
