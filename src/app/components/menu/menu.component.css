@@ -1,3 +1,13 @@
 ul{
 list-style: none;
 }
+
+button{
+    background-color:  #ea6a0b;
+    border: 2px solid black;
+    margin-bottom:1% ;
+}
+
+a{
+    color: black;
+}
