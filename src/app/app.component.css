@@ -1,25 +1,16 @@
 *{
     box-sizing: border-box;
 }
-app-root {
+.main {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-}
-app-menu, app-home {
-    display: bock;
-}
-app-header, footer {
-    display: flex;
-    width: 100%;
 }
 app-menu {
-    display: flex;
-    width:30%;
+    width: 20%;
 }
-app-home {
-    display: flex;
+.mainRight {
     width: 70%;
+    min-height: 78.2vh;
 }
 h1{
     text-align: center;

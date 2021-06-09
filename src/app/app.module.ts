@@ -13,6 +13,7 @@ import { AdresseComponent } from './components/adresse/adresse.component';
 import { DetailArticleComponent } from './components/detail-article/detail-article.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PanierComponent } from './components/panier/panier.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PanierComponent } from './components/panier/panier.component';
     AdresseComponent,
     HeaderComponent,
     PanierComponent,
-    DetailArticleComponent
+    DetailArticleComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
