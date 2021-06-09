@@ -1,13 +1,41 @@
-ul{
-list-style: none;
+ul {
+    list-style: none;
 }
 
-button{
-    background-color:  #ea6a0b;
-    border: 2px solid black;
-    margin-bottom:1% ;
+button {
+    background-color: #ea6a0b;
+    border: 1px solid white;
+    
 }
 
-a{
-    color: black;
+li{
+    border: none;
 }
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.card{
+    display: flex;
+    width: 20%;
+    height: 100vh;
+    align-items: stretch;
+}
+
+h5{
+    text-align: center;
+    color: #ea6a0b; 
+}
+ 
+/* #titre {
+    text-align: center;
+    color: #ea6a0b;
+    border-bottom: 1px solid black ;
+    border-right: 1px solid black;
+} */
+
+/* #menu {
+    display: flex;
+    justify-content: stretch;
+} */

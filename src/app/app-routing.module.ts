@@ -6,6 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LivreComponent } from './components/livre/livre.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { PanierComponent } from './components/panier/panier.component';
 import { PersonneComponent } from './components/personne/personne.component';
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: "menu", component: MenuComponent },
   { path: "personne", component: PersonneComponent},
   { path: "not-found", component: NotFoundComponent},
+  { path: "panier", component: PanierComponent},
   { path: "", redirectTo: "/home", pathMatch: "full"},
   { path: "**", redirectTo: "/not-found"}
 ];
