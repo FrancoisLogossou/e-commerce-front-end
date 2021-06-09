@@ -10,6 +10,7 @@ import { LivreComponent } from './components/livre/livre.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { PersonneComponent } from './components/personne/personne.component';
 import { AdresseComponent } from './components/adresse/adresse.component';
+import { DetailArticleComponent } from './components/detail-article/detail-article.component';
 import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
@@ -22,6 +23,7 @@ import { HeaderComponent } from './components/header/header.component';
     MenuComponent,
     PersonneComponent,
     AdresseComponent,
+    DetailArticleComponent,
     HeaderComponent
   ],
   imports: [
