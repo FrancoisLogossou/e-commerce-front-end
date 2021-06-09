@@ -1,5 +1,17 @@
 h1{
     text-align: center;
-    text-decoration: black underline;
+    text-decoration: #8B8A8F underline;
     color: #ea6a0b;
+}
+
+@media screen and (max-width: 509px){
+    app-menu{
+        display: none;
+    }
+}
+
+footer{
+    color: white;
+    text-align: center;
+    background-color: #ea6a0b;
 }
