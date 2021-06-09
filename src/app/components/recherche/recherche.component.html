@@ -1,0 +1,17 @@
+<h2>Nouveautés</h2>
+<div class="ligne"></div>
+<div class="category-container">
+    <a *ngFor="let article of articles" [routerLink]='["/detailarticle", article.refArticle]'>
+        <div class='home-article'>
+            <img src={{article.imageArticle}} alt="">
+            <div class="home-article-items">
+                <div class="home-article-title">
+                    <p>Titre: {{article.titreArticle}}</p>
+                    <p>Format: {{article.puht}}</p>
+                </div>
+                <button><i class="fas fa-shopping-cart"></i></button>
+            </div>
+        </div>
+    </a>
+    <button class="voir-offres">Voir toutes les offres <i class="fas fa-level-down-alt"></i> </button>
+</div>

@@ -3,13 +3,13 @@
     <h2>Nouveautés</h2>
     <div class="ligne"></div>
     <div class="category-container">
-        <a *ngFor="let livre of livres" [routerLink]='["/detailarticle", livre.refArticle]'>
+        <a *ngFor="let article of articles" [routerLink]='["/detailarticle", article.refArticle]'>
             <div class='home-article'>
-                <img src={{livre.imageArticle}} alt="">
+                <img src={{article.imageArticle}} alt="">
                 <div class="home-article-items">
                     <div class="home-article-title">
-                        <p>Titre: {{livre.titre}}</p>
-                        <p>Format: {{livre.format}}</p>
+                        <p>Titre: {{article.titreArticle}}</p>
+                        <p>Format: {{article.puht}}</p>
                     </div>
                     <button><i class="fas fa-shopping-cart"></i></button>
                 </div>
@@ -21,13 +21,13 @@
     <h2>Meilleures ventes</h2>
     <div class="ligne"></div>
     <div class="category-container">
-        <a *ngFor="let livre of livres" [routerLink]='["/detailarticle", livre.refArticle]'>
+        <a *ngFor="let article of articles" [routerLink]='["/detailarticle", article.refArticle]'>
             <div class='home-article'>
-                <img src={{livre.imageArticle}} alt="">
+                <img src={{article.imageArticle}} alt="">
                 <div class="home-article-items">
                     <div class="home-article-title">
-                        <p>Titre: {{livre.titre}}</p>
-                        <p>Format: {{livre.format}}</p>
+                        <p>Titre: {{article.titreArticle}}</p>
+                        <p>Format: {{article.puht}}</p>
                     </div>
                     <button><i class="fas fa-shopping-cart"></i></button>
                 </div>
@@ -39,13 +39,13 @@
     <h2>Notre Sélection</h2>
     <div class="ligne"></div>
     <div class="category-container">
-        <a *ngFor="let livre of livres" [routerLink]='["/detailarticle", livre.refArticle]'>
+        <a *ngFor="let article of articles" [routerLink]='["/detailarticle", article.refArticle]'>
             <div class='home-article'>
-                <img src={{livre.imageArticle}} alt="">
+                <img src={{article.imageArticle}} alt="">
                 <div class="home-article-items">
                     <div class="home-article-title">
-                        <p>Titre: {{livre.titre}}</p>
-                        <p>Format: {{livre.format}}</p>
+                        <p>Titre: {{article.titreArticle}}</p>
+                        <p>Format: {{article.puht}}</p>
                     </div>
                     <button><i class="fas fa-shopping-cart"></i></button>
                 </div>

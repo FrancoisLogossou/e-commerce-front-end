@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Livre } from '../interfaces/livre';
-import { Injectable } from '@angular/core';
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class LivreService {
 
   constructor(private http: HttpClient) { }
 
-  getAllPersonnes() {
+  getAllLivres() {
     return this.http.get<Array<Livre>>(this.url);
   }
 

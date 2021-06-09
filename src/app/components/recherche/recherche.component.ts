@@ -4,13 +4,12 @@ import { Article } from 'src/app/interfaces/article';
 import { ArticleService } from 'src/app/services/article.service';
 
 @Component({
-  selector: 'app-detail-article',
-  templateUrl: './detail-article.component.html',
-  styleUrls: ['./detail-article.component.css']
+  selector: 'app-recherche',
+  templateUrl: './recherche.component.html',
+  styleUrls: ['./recherche.component.css']
 })
-export class DetailArticleComponent implements OnInit {
-  refArticle = '';
-  article: Article = {};
+export class RechercheComponent implements OnInit {
+  toSearch = '';
   articles: Article[] = [];
   constructor(private articleService: ArticleService,
     private route: ActivatedRoute) { }
@@ -18,12 +17,11 @@ export class DetailArticleComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(
       (value) => {
-        this.refArticle = value.get('refArticle') ?? '';
-        this.articleService.getOneArticleById(this.refArticle).subscribe((res) => {
+        this.toSearch = value.get('toSearch') ?? '';
+        this.articleService.getArticlesBySearch(this.toSearch).subscribe((res) => {
           this.articles = res;
-          console.log(this.articles[0].resumeArticle)
+          console.log(this.articles)
         });
       });
   }
-
 }
