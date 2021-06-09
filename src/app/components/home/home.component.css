@@ -1,0 +1,98 @@
+h2 {
+    background: #FFFFFF;
+    font-family: Segoe UI;
+    font-size: 20px;
+    font-weight: bold;
+    color: #E3570E;
+    margin:0 34px;
+    text-align: center;
+}
+
+a:link 
+{ 
+ text-decoration:none; 
+}
+
+div.ligne{
+    border-bottom: 1px solid #707070;
+    margin:0 34px 20px 34px;
+}
+
+.category-container, .home-article, .home-article-items{
+    display: flex;
+}
+
+img{
+    width: 360px;
+    height: 300px;
+    border-radius: 10px 10px 0 0;
+}
+
+.voir-offres{
+    width: 300px;
+    height: 50px;
+    padding-left: 20px;
+    color: #E3570E;
+    border: 1px solid #E3570E;
+    border-radius: 30px;
+    background: rgba(254, 241, 235, 0.75);
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.fa-level-down-alt{
+ color: #E3570E;
+ transform: rotate(-90deg);
+}
+
+.voir-offres:hover{
+    width: 300px;
+    height: 50px;
+    color: white;
+    border: 1px solid white;
+    border-radius: 30px;
+    background: rgba(234, 106, 11, 0.8);
+}
+
+.voir-offres:hover .fa-level-down-alt{
+    color: white;
+}   
+
+@media only screen and (min-width: 100px){
+    .home-article{
+        width: 360px;
+        height: 400px;
+        background: rgba(234, 106, 11, 0.8);
+        color: #FFFFFF; 
+        border-radius: 10px;
+        margin-bottom: 20px; 
+        display: flex; 
+        flex-direction: column;  
+    }
+    .home-article-items{
+        justify-content: space-between;
+        
+    }
+
+    .home-article-title{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .home-article-items>button{
+        background: #FFFFFF;
+        width: 40px;
+        height: 40px;
+        border-radius: 30px;
+        align-self: flex-end;
+        
+    }
+
+    .category-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
