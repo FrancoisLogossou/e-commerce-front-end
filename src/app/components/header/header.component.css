@@ -12,14 +12,16 @@ img {
     width: 60%;
 }
 input {
-    padding: 5px 40px 5px 20px;
+    padding: 5px 45px 5px 20px;
+    width: 60%;
     border: 1px solid #ea6a0b;
     background-color: #EFF6F3;
 }
 .loupe {
     position: absolute;
-    right: 120px;
+    right: 7.5%;
 }
+
 .gauche, .burger, #firstSearchIcon {
     display: none;
 }
@@ -27,6 +29,17 @@ input {
     width: 30%;
 }
 
+@media screen and (max-width: 971px) {
+    .droite {
+        width: 40%;
+    }
+    input {
+        width: 60%;
+    }
+    .loupe {
+        right: 10%;
+    }
+}
 @media screen and (max-width: 509px) {
     input, #secondSearchIcon {
         display: none;
@@ -36,14 +49,5 @@ input {
     }
     .gauche {
         margin: 5%
-    }
-}
-
-@media screen and (max-width: 971px) {
-    .droite {
-        width: 40%;
-    }
-    input {
-        width: 60%;
     }
 }
