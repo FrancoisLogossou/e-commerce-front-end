@@ -1,53 +1,42 @@
 *{
     outline: none;
 }
-
 header {
     border-bottom: 1px solid #8B8A8F;
     width: 100%;
 }
-
-i, i>a {
+i, i > a {
     color: #ea6a0b;
 }
-
 img {
     width: 60%;
 }
-
-input{
-    background-color: #EFF6F3;
+input {
+    padding: 5px 40px 5px 20px;
     border: 1px solid #ea6a0b;
+    background-color: #EFF6F3;
 }
-.gauche {
+.loupe {
+    position: absolute;
+    right: 120px;
+}
+.gauche, .burger, #firstSearchIcon {
     display: none;
 }
-.fa-bars {
-    display: none;
-}
-
-#firstSearchIcon {
-    display: none;
-}
-
 .droite {
     width: 30%;
 }
 
 @media screen and (max-width: 509px) {
-    input {
+    input, #secondSearchIcon {
         display: none;
     }
-    .gauche,.fa-bars,#firstSearchIcon{
+    .gauche, .burger, #firstSearchIcon {
         display: block;
     }
     .gauche {
         margin: 5%
     }
-    #secondSearchIcon{
-        display: none;
-    }
-
 }
 
 @media screen and (max-width: 971px) {
