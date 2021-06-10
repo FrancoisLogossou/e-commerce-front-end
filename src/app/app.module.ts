@@ -16,6 +16,7 @@ import { PanierComponent } from './components/panier/panier.component';
 import { ArticleComponent } from './components/article/article.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RechercheComponent } from './components/recherche/recherche.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { RechercheComponent } from './components/recherche/recherche.component';
     DetailArticleComponent,
     ArticleComponent,
     RechercheComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,

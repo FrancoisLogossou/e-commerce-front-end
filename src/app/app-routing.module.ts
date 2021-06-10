@@ -12,13 +12,13 @@ import { PersonneComponent } from './components/personne/personne.component';
 import { RechercheComponent } from './components/recherche/recherche.component';
 
 const routes: Routes = [
-  { path: "adresse", component: AdresseComponent },
-  { path: "connexion", component: ConnexionComponent },
-  { path: "home", component: HomeComponent },
-  { path: "detailarticle/:refArticle", component: DetailArticleComponent },
   { path: "recherche/:toSearch", component: RechercheComponent },
-  { path: "livre", component: LivreComponent },
-  { path: "menu", component: MenuComponent },
+  { path: "adresse", component: AdresseComponent},
+  { path: "connexion", component: ConnexionComponent},
+  { path: "home", component: HomeComponent},
+  { path: "detailarticle/:refArticle", component: DetailArticleComponent},
+  { path: "livre", component: LivreComponent},
+  { path: "menu", component: MenuComponent},
   { path: "personne", component: PersonneComponent},
   { path: "not-found", component: NotFoundComponent},
   { path: "panier", component: PanierComponent},
@@ -30,4 +30,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { };

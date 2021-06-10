@@ -1,7 +1,9 @@
 <header class="d-flex align-items-center justify-content-between">
     <div class="gauche d-flex align-items-center justify-content-around">
-        <i class="fas fa-bars fa-lg"></i>
-        <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQFoVKRI1HMkOw/company-logo_200_200/0/1519882245722?e=2159024400&v=beta&t=d8sbFkm6K_rJie2G4_flyxbin8XMUPVVT0zTTM6SFnA"
+        <a routerLink='/menu' class="burger">
+            <i class="fas fa-bars fa-lg"></i>
+        </a>
+        <img class="logoIB" src="https://media-exp1.licdn.com/dms/image/C4E0BAQFoVKRI1HMkOw/company-logo_200_200/0/1519882245722?e=2159024400&v=beta&t=d8sbFkm6K_rJie2G4_flyxbin8XMUPVVT0zTTM6SFnA"
             alt="logo d'Ib " routerLink='/home'>
     </div>
 
@@ -15,7 +17,7 @@
         </a>
         <i id="firstSearchIcon" class="fas fa-search fa-lg"></i>
         <input type="text" placeholder="Recherche" class="rounded-pill">
-        <i type="submit" id="secondSearchIcon" class="fas fa-search fa-lg"></i>
+        <i id="secondSearchIcon" class="fas fa-search fa-lg loupe"></i>
         <a routerLink='/panier'>
             <i class="fas fa-shopping-cart fa-lg"></i>
         </a>

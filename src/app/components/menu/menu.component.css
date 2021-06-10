@@ -1,41 +1,25 @@
-ul {
-    list-style: none;
+.menu {
+    width: 100%;
 }
-
-button {
-    background-color: #ea6a0b;
-    border: 1px solid white;
-    
-}
-
-li{
-    border: none;
+h2 {
+    text-align: center;
 }
 a {
-    color: white;
+    font-size: 20px;
+    color: #fff;
     text-decoration: none;
 }
-
-.card{
-    display: flex;
-    width: 20%;
-    height: 100vh;
-    align-items: stretch;
+ul {
+    padding: 0;
+    list-style: none;
 }
-
-h5{
+li {
+    height: 60px;
+    line-height: 60px;
     text-align: center;
-    color: #ea6a0b; 
+    border: 2px solid #fff;
+    background-color: #ea6a0b;
 }
- 
-/* #titre {
-    text-align: center;
-    color: #ea6a0b;
-    border-bottom: 1px solid black ;
-    border-right: 1px solid black;
-} */
-
-/* #menu {
-    display: flex;
-    justify-content: stretch;
-} */
+button {
+    padding: 0;
+}
