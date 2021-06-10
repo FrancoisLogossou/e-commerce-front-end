@@ -10,11 +10,13 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PanierComponent } from './components/panier/panier.component';
 import { PersonneComponent } from './components/personne/personne.component';
 import { RechercheComponent } from './components/recherche/recherche.component';
+import { CreationComponent } from './components/creation/creation.component';
 
 const routes: Routes = [
   { path: "recherche/:toSearch", component: RechercheComponent },
   { path: "adresse", component: AdresseComponent},
   { path: "connexion", component: ConnexionComponent},
+  { path: "creation", component: CreationComponent},
   { path: "home", component: HomeComponent},
   { path: "detailarticle/:refArticle", component: DetailArticleComponent},
   { path: "livre", component: LivreComponent},

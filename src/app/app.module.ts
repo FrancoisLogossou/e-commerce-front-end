@@ -16,6 +16,7 @@ import { ArticleComponent } from './components/article/article.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RechercheComponent } from './components/recherche/recherche.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CreationComponent } from './components/creation/creation.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ArticleComponent,
     RechercheComponent,
     FooterComponent,
+    CreationComponent,
   ],
   imports: [
     BrowserModule,
