@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Article } from 'src/app/interfaces/article';
 import { ArticleService } from 'src/app/services/article.service';
+import { GestionDuPanierService } from 'src/app/services/gestion-du-panier.service';
 
 @Component({
   selector: 'app-detail-article',
@@ -13,7 +14,8 @@ export class DetailArticleComponent implements OnInit {
   article: Article = {};
   articles: Article[] = [];
   constructor(private articleService: ArticleService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private gestionDuPanier: GestionDuPanierService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(
@@ -25,5 +27,14 @@ export class DetailArticleComponent implements OnInit {
         });
       });
   }
+
+  ajouterAuPanier(){
+    this.articleService.getOneArticleById(this.refArticle.toString()).subscribe((res) => { 
+      this.article = res; 
+      this.gestionDuPanier.ajouterAuPanier(this.article);
+    });
+
+  }
+
 
 }
