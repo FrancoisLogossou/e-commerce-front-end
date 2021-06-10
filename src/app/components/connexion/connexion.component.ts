@@ -18,15 +18,13 @@ export class ConnexionComponent implements OnInit {
   ngOnInit(): void {
   }
   connexion(){
-    console.log(this.personne);
     this.auth.checkData(this.personne).subscribe(
       res => {
-        console.log(res);
         if (res) {
           localStorage.setItem('user', JSON.stringify(res));
           this.router.navigateByUrl('/home');
         } else {
-          this.erreur = "Identifiants incorrects, cet utilisateur n'existe pas"
+          this.erreur = "L'adresse e-mail ou le mot de passe sont incorrects."
         }
       }
     )
