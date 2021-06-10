@@ -1,8 +1,8 @@
 export interface Personne {
-    idPersonne      : number,
-    nomPersonne?    : string,
-    prenomPersonne? : string,
-    emailPersonne?  : string,
-    mdpPersonne?    : string,
-    typePersonne?   : string,
+    idUser?      : number,
+    nomUser?    : string,
+    prenomuser? : string,
+    emaiUser?   : string,
+    mdpUser?    : string,
+    typeUser?   : string,
 }
