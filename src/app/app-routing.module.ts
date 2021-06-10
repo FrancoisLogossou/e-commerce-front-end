@@ -10,6 +10,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PanierComponent } from './components/panier/panier.component';
 import { PersonneComponent } from './components/personne/personne.component';
 import { RechercheComponent } from './components/recherche/recherche.component';
+import { AuthGuard } from './guards/auth.guard';
+
 
 const routes: Routes = [
   { path: "recherche/:toSearch", component: RechercheComponent },
