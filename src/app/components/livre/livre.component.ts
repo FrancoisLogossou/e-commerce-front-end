@@ -14,14 +14,14 @@ export class LivreComponent implements OnInit {
   constructor(private livreService: LivreService) { }
 
   ngOnInit(): void {
-    this.initialize();
+    //this.initialize();
   }
   
-  initialize() {
-    this.livreService.getAllPersonnes().subscribe(
-      (res) => {
-        this.livres = res;
-      }
-    )
-  }
+  // initialize() {
+  //   this.livreService.getAllPersonnes().subscribe(
+  //     (res) => {
+  //       this.livres = res;
+  //     }
+  //   )
+  // }
 }

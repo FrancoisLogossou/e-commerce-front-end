@@ -13,6 +13,9 @@ import { AdresseComponent } from './components/adresse/adresse.component';
 import { DetailArticleComponent } from './components/detail-article/detail-article.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PanierComponent } from './components/panier/panier.component';
+import { ArticleComponent } from './components/article/article.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { RechercheComponent } from './components/recherche/recherche.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
@@ -28,11 +31,14 @@ import { FooterComponent } from './components/footer/footer.component';
     HeaderComponent,
     PanierComponent,
     DetailArticleComponent,
+    ArticleComponent,
+    RechercheComponent
     FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,7 +10,7 @@ export class LivreService {
 
   constructor(private http: HttpClient) { }
 
-  getAllPersonnes() {
+  getAllLivres() {
     return this.http.get<Array<Livre>>(this.url);
   }
 

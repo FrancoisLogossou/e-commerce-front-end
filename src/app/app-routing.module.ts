@@ -9,8 +9,10 @@ import { MenuComponent } from './components/menu/menu.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PanierComponent } from './components/panier/panier.component';
 import { PersonneComponent } from './components/personne/personne.component';
+import { RechercheComponent } from './components/recherche/recherche.component';
 
 const routes: Routes = [
+  { path: "recherche/:toSearch", component: RechercheComponent },
   { path: "adresse", component: AdresseComponent},
   { path: "connexion", component: ConnexionComponent},
   { path: "home", component: HomeComponent},
