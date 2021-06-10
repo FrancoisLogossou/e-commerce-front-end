@@ -20,8 +20,8 @@ export class DetailArticleComponent implements OnInit {
       (value) => {
         this.refArticle = value.get('refArticle') ?? '';
         this.articleService.getOneArticleById(this.refArticle).subscribe((res) => {
-          this.articles = res;
-          console.log(this.articles[0].resumeArticle)
+          this.article = res; 
+          console.log(this.article.resumeArticle)
         });
       });
   }
