@@ -9,6 +9,7 @@ app-menu {
     width: 20%;
 }
 .mainRight {
+    margin: 20px auto;
     width: 70%;
     min-height: 78.2vh;
 }
