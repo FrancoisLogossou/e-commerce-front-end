@@ -1,0 +1,39 @@
+* {
+    outline: none;
+}
+h2, .enTete p {
+    margin-bottom: 0;
+    height:50px;
+    color: #ea6a0b;
+}
+p {
+    line-height: 50px;
+}
+form p {
+    width: 100%;
+    text-align: center;
+}
+label, input {
+    margin-bottom: 20px;
+    width: 60%;
+}
+input{
+    padding-left: 10px;
+    border-radius: 5px;
+}
+hr {
+    margin: 0;
+    height: 2px;
+}
+form {
+    margin-top: 30px;
+}
+button {
+    width: 220px;
+    height: 50px;
+    border-radius: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: none;
+    color: #fff;
+}
