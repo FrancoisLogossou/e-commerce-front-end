@@ -1,6 +1,10 @@
 * {
     outline: none;
 }
+a {
+    color:#ea6a0b;
+    text-decoration: none;
+}
 h2, .enTete p {
     margin-bottom: 0;
     height:50px;
@@ -36,4 +40,11 @@ button {
     letter-spacing: 2px;
     border: none;
     color: #fff;
+}
+a{
+    text-decoration: none;
+    color: #ea6a0b;
+}
+a:hover{
+    font-weight: bold;
 }

@@ -5,12 +5,14 @@ import { LignePanier } from 'src/app/interfaces/ligne-panier';
 import { GestionCommandeService } from 'src/app/services/gestion-commande.service';
 import { GestionDuPanierService } from 'src/app/services/gestion-du-panier.service';
 
+
 @Component({
   selector: 'app-commande',
   templateUrl: './commande.component.html',
   styleUrls: ['./commande.component.css']
 })
 export class CommandeComponent implements OnInit {
+
   lignesCommande: LignePanier[] = [];
   prixTotal = 0;
   
@@ -42,6 +44,4 @@ updateStock(refAricle : number, qteStock : number){
     (res)=> {
     }
   )
-}
-
 }

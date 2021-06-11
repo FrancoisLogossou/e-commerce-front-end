@@ -1,6 +1,6 @@
 <div class="enTete d-flex justify-content-between">
     <h2>Création de votre compte</h2>
-    <p>Home / Connexion / Création de Compte</p>
+    <p><a routerLink="">Home</a> / <a routerLink="/creation">Création de Compte</a></p>
 </div>
 <hr>
 <form #monForm=ngForm class="d-flex flex-wrap justify-content-center" (ngSubmit)=addPersonne()>
@@ -11,15 +11,15 @@
     <label for="prenom">
         Prénom :
     </label>
-    <input id="prenom" type="text" name="prenomPersonne" [(ngModel)]="personne.prenomPersonne">
+    <input id="prenom" type="text" name="prenomPersonne" [(ngModel)]="personne.prenomPersonne" required #nomPersonne=ngModel>
     <label for="email">
         E-Mail :
     </label>
-    <input id="email" type="text" name="emailPersonne" [(ngModel)]="personne.emailPersonne">
+    <input id="email" type="text" name="emailPersonne" [(ngModel)]="personne.emailPersonne">{{ erreur }}
     <label for="mdp">
         Mot de passe :
     </label>
-    <input id="mdp" type="password" name="mdpPersonne" [(ngModel)]="personne.mdpPersonne">
+    <input id="mdp" type="password" name="mdpPersonne" [(ngModel)]="personne.mdpPersonne" required #nomPersonne=ngModel>
     <p>
         En créant votre compte, vous acceptez nos conditions & politique de confidentialité.
     </p>

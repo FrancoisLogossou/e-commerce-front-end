@@ -14,14 +14,14 @@ export class HomeComponent implements OnInit {
   // livres: Livre[] = [{ numISBN: 'ffezfzfzffez', titre: 'salut à tous', format: 'poche', refArticle: 1, imageArticle: 'https://static.fnac-static.com/multimedia/Images/FR/NR/62/ff/a9/11140962/1507-0/tsp20191031071127/Turquie-le-livre-de-cuisine.jpg' },
   // { numISBN: 'aaaaaaaaaaa', titre: 'comment ça va', format: 'manteau', refArticle: 2, imageArticle : 'https://images-na.ssl-images-amazon.com/images/I/71uFN8LvWwL.jpg' },
   // { numISBN: 'bbbbbbbb', titre: 'oui et toi', format: 'pantalon', refArticle: 3, imageArticle: 'https://www.lhommemoderne.fr/10462-19712-thickbox/livre-les-contes-de-perrault.jpg'}];
-  user: Personne = {};
+  personne: Personne = {};
   article: Article = {};
   articles: Article[] = [];
   constructor(private articleService: ArticleService, private gestionDuPanier : GestionDuPanierService) { }
 
   ngOnInit(): void {
     this.initialize();
-    this.user = JSON.parse(localStorage.getItem('user') ?? ''); 
+    this.personne = JSON.parse(localStorage.getItem('user') ?? ''); 
     
   }
 

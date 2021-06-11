@@ -20,12 +20,12 @@ export class PanierComponent implements OnInit {
   prixTotal = 0;
   isValid: Boolean = true;
 
-
   constructor(
     private gestionDuPanier: GestionDuPanierService,
     private articleService: ArticleService,
     private router: Router
   ) { }
+
 
   ngOnInit(): void {
     this.initialize();
