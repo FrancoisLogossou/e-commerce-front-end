@@ -17,7 +17,7 @@ export class ArticleService {
     return this.http.get<Array<Article>>(this.url);
   }
   getOneArticleById(refArticle: string) {
-    return this.http.get<Array<Article>>(this.url2+refArticle);
+    return this.http.get<Article>(this.url2+refArticle);
   }
   getArticlesBySearch(toSearch : string){
     return this.http.get<Array<Article>>(this.url3+toSearch);

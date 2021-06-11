@@ -1,1 +1,34 @@
-<p>connexion works!</p>
+<h1>Page de connexion</h1>
+
+<form #monForm=ngForm (ngSubmit)=connexion()>
+
+    <!-- voir pour la déconnexion, dans le menu, si un utilisateur est connecté, connexion => déconnexion -->
+    <div>
+        Adresse Email : <input type=email name=emailUser [(ngModel)]="personne.emailPersonne" required #email=ngModel>
+    </div>
+    <div [hidden]="email.valid || email.pristine">
+        L'adresse email est obligatoire
+    </div>
+    <div>
+        Mot de passe : <input type=password name=motDePasseUser [(ngModel)]="personne.mdpPersonne" required #mdp=ngModel>
+    </div>
+    <div [hidden]="mdp.valid || mdp.pristine">
+        Le Mot de passe est obligatoire
+    </div>
+    <div>
+        <button class="btn btn-outline-success" [disabled]="!monForm.valid">
+            se connecter
+        </button>
+
+    </div>
+</form>
+
+<div id="error">
+    {{ erreur }}
+</div>
+
+<div>
+    Vous ne possédez pas de compte?
+    Créez en un !
+    <button class="fas fa-user-plus" routerLink="/creation"></button>
+</div>
