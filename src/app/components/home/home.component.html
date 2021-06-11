@@ -19,19 +19,22 @@
 
 <h2>Meilleures ventes</h2>
 <hr>
-<div class="category-container d-flex flex-wrap justify-content-center">
-
-    <div *ngFor="let article of articles" class='home-article'>
-        <a [routerLink]='["/detailarticle", article.refArticle]'>
-            <img src={{article.imageArticle}} alt="">
-        </a>
-        <div class="home-article-items">
-            <div class="home-article-title">
-                <p>Titre: {{article.titreArticle}}</p>
-                <p>Format: {{article.puht}}</p>
+<div class="category-container">
+    <div class="test">
+        <a class="test2" *ngFor="let livre of livres" [routerLink]='["/detailarticle", livre.refArticle]'>
+            <div class='home-article'>
+                <img src={{livre.imageArticle}} alt="">
+                <div class="home-article-items">
+                    <div class="home-article-title">
+                        <p>Titre: {{livre.titre}}</p>
+                        <p>Format: {{livre.format}}</p>
+                    </div>
+                    <button>
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
             </div>
-            <button><i class="fas fa-shopping-cart"></i></button>
-        </div>
+        </a>
     </div>
 
     <button class="voir-offres">Voir toutes les offres <i class="fas fa-level-down-alt"></i> </button>
