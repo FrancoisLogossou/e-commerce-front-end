@@ -7,10 +7,13 @@ import { Personne } from '../interfaces/personne';
   providedIn: 'root'
 })
 export class PersonneService {
-  private url = 'http://localhost:3000/user';
+  private url = 'http://localhost:3000/user/';
 
   constructor(private http: HttpClient) { }
   
+  getPersonneByEmail(email: string) {
+    return this.http.get<Array<Personne>>(this.url+ email);
+  }
   getAllPersonnes() {
     return this.http.get<Array<Personne>>(this.url);
   }

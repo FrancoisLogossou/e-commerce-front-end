@@ -11,7 +11,8 @@ import { ConnexionService } from 'src/app/services/connexion.service'
 export class ConnexionComponent implements OnInit {
   personne: Personne = {};
   erreur = "";
-  constructor(private auth: ConnexionService,
+  constructor(
+    private auth: ConnexionService,
     private router: Router
   ) { }
 

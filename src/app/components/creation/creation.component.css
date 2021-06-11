@@ -1,6 +1,10 @@
 * {
     outline: none;
 }
+a {
+    color:#ea6a0b;
+    text-decoration: none;
+}
 h2, .enTete p {
     margin-bottom: 0;
     height:50px;
