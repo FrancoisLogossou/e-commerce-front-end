@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Article } from 'src/app/interfaces/article';
+import { Livre } from 'src/app/interfaces/livre';
 import { ArticleService } from 'src/app/services/article.service';
 import { GestionDuPanierService } from 'src/app/services/gestion-du-panier.service';
 
@@ -11,8 +12,8 @@ import { GestionDuPanierService } from 'src/app/services/gestion-du-panier.servi
 })
 export class DetailArticleComponent implements OnInit {
   refArticle = '';
-  article: Article = {};
-  articles: Article[] = [];
+  article: Livre = {};
+  articles: Livre[] = [];
   constructor(private articleService: ArticleService,
     private route: ActivatedRoute,
     private gestionDuPanier: GestionDuPanierService) { }
@@ -24,6 +25,7 @@ export class DetailArticleComponent implements OnInit {
         this.articleService.getOneArticleById(this.refArticle).subscribe((res) => {
           this.article = res; 
           console.log(this.article.resumeArticle)
+          console.log(this.article.numISBN)
         });
       });
   }

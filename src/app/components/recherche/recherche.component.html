@@ -9,7 +9,9 @@
                     <p>Titre: {{article.titreArticle}}</p>
                     <p>Format: {{article.puht}}</p>
                 </div>
-                <button><i class="fas fa-shopping-cart"></i></button>
+                <ng-container *ngIf="article.qteStock != 0">
+                    <button><i class="fas fa-shopping-cart"></i></button>
+                </ng-container>
             </div>
         </div>
     </a>
