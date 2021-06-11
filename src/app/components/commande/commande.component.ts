@@ -45,3 +45,4 @@ updateStock(refAricle : number, qteStock : number){
     }
   )
 }
+}

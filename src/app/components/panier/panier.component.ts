@@ -51,7 +51,7 @@ export class PanierComponent implements OnInit {
   }
 
   genererCmd() {
-    // this.initialize();
+    //this.initialize();
     this.isValid = true;
     this.refsArticles = this.gestionDuPanier.getRefsInPanier();
     this.qtesArticles = this.gestionDuPanier.getQtesInPanier();

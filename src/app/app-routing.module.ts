@@ -23,7 +23,6 @@ const routes: Routes = [
   { path: "detailarticle/:refArticle", component: DetailArticleComponent},
   { path: "livre", component: LivreComponent},
   { path: "menu", component: MenuComponent},
-  { path: "commande", component: CommandeComponent},
   { path: "personne", component: PersonneComponent},
   { path: "not-found", component: NotFoundComponent},
   { path: "panier", component: PanierComponent},
