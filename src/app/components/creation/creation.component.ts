@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { of } from 'rxjs';
+import { Router } from '@angular/router';
 import { Personne } from 'src/app/interfaces/personne';
 import { PersonneService } from 'src/app/services/personne.service';
 
@@ -11,25 +13,29 @@ import { PersonneService } from 'src/app/services/personne.service';
 export class CreationComponent implements OnInit {
   personne: Personne = {};
   personnes: Personne[] = [];
-
-  constructor(private personneService: PersonneService) { }
+  isValid: boolean = true;
+  erreur = "";
+  constructor(
+    private personneService: PersonneService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
   addPersonne() {
-    this.personneService.getPersonne().subscribe(
-      (res) => {
-        console.log(this.personne);
-        this.personne = {};
+    this.personneService.getPersonneByEmail(this.personne.emailPersonne ?? '').subscribe((p) => {
+      if (p.length == 0) {
+        this.personneService.addPersonne(this.personne).subscribe(
+          (res) => {
+            this.personne = {};
+            this.router.navigateByUrl('/home');
+          }
+        );
+      } else {
+        this.erreur = "L'adresse email saisie existe déjà";
       }
-    )
-    // this.personneService.addPersonne(this.personne).subscribe(
-    //   (res) => {
-    //     console.log(this.personne);
-    //     this.personne = {};
-    //   }
-    // );
+    }); 
   }
   initialize() {
     this.personneService.getAllPersonnes().subscribe(
