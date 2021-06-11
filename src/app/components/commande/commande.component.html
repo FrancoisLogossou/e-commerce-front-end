@@ -1,0 +1,14 @@
+<h2>Votre Commande</h2>
+<div class="ligne"></div>
+<div *ngFor="let ligne of lignesCommande" class= "article-panier">
+        <img src={{ligne.article!.imageArticle}} alt="">
+        <div class="d-flex flex-column quantity-item">
+            <p>Titre : {{ligne.article!.titreArticle ?? ''}}</p>
+            <p>qté : {{ligne.qteArticle}}</p>
+            <div class="select-quantity">
+            </div>
+            <p>Prix unitaire : {{ligne.article!.puht ?? 0}}</p>
+        </div> 
+</div>
+<p>prix total : {{prixTotal}}</p>
+<button (click)='genererCmd()'>Valider la commande</button>

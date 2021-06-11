@@ -11,6 +11,7 @@ import { PanierComponent } from './components/panier/panier.component';
 import { PersonneComponent } from './components/personne/personne.component';
 import { RechercheComponent } from './components/recherche/recherche.component';
 import { CreationComponent } from './components/creation/creation.component';
+import { CommandeComponent } from './components/commande/commande.component';
 
 const routes: Routes = [
   { path: "recherche/:toSearch", component: RechercheComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: "detailarticle/:refArticle", component: DetailArticleComponent},
   { path: "livre", component: LivreComponent},
   { path: "menu", component: MenuComponent},
+  { path: "commande", component: CommandeComponent},
   { path: "personne", component: PersonneComponent},
   { path: "not-found", component: NotFoundComponent},
   { path: "panier", component: PanierComponent},

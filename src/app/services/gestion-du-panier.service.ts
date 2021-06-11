@@ -8,9 +8,10 @@ import { LignePanier } from '../interfaces/ligne-panier';
 })
 export class GestionDuPanierService {
   panier: LignePanier[] = [];
-  // ligneTemp: LignePanier = {};
   prixTotal = 0;
   ligneTemp2: LignePanier = {};
+  refsArticlesInPanier: number[] = [];
+  qtesArticlesInPanier: number[] = [];
   temp = '';
 
 
@@ -46,15 +47,15 @@ export class GestionDuPanierService {
     localStorage.setItem('panier', JSON.stringify(this.panier));
   }
 
-  augQuantite(refArticle: number){
+  augQuantite(refArticle: number) {
     this.findArticle(refArticle)
-    if (this.ligneTemp2.qteArticle != null) {
+    if (this.ligneTemp2.qteArticle != null && (this.ligneTemp2.article!.qteStock ?? 0) > this.ligneTemp2.qteArticle) {
       this.ligneTemp2.qteArticle++;
     }
     localStorage.setItem('panier', JSON.stringify(this.panier));
   }
 
-  dimQuantite(refArticle: number){
+  dimQuantite(refArticle: number) {
     this.findArticle(refArticle)
     if (this.ligneTemp2.qteArticle && this.ligneTemp2.qteArticle > 1) {
       this.ligneTemp2.qteArticle--;
@@ -62,20 +63,40 @@ export class GestionDuPanierService {
     localStorage.setItem('panier', JSON.stringify(this.panier));
   }
 
-  calculPrixTotal(){
+  calculPrixTotal() {
+    this.prixTotal = 0;
     this.temp = localStorage.getItem('panier') ?? '';
     this.panier = JSON.parse(this.temp);
     for (const elt of this.panier) {
-      this.prixTotal += (elt.qteArticle  ?? 0) * (elt.article?.puht  ?? 0);
+      this.prixTotal += (elt.qteArticle ?? 0) * (elt.article!.puht ?? 0);
+      this.prixTotal = +this.prixTotal.toFixed(2)
     }
     return this.prixTotal;
   }
 
-  findArticle(refArticle : number){
+  findArticle(refArticle: number) {
     this.temp = localStorage.getItem('panier') ?? '';
     this.panier = JSON.parse(this.temp);
     return this.ligneTemp2 = this.panier.find(elt => elt.article?.refArticle == refArticle) ?? {};
   }
+  getRefsInPanier() {
+    this.refsArticlesInPanier = [];
+    this.temp = localStorage.getItem('panier') ?? '';
+    this.panier = JSON.parse(this.temp);
+    for (const elt of this.panier) {
+      this.refsArticlesInPanier.push(elt.article?.refArticle ?? 0)
+    }
+    return this.refsArticlesInPanier;
+  }
 
+  getQtesInPanier() {
+    this.qtesArticlesInPanier = []
+    this.temp = localStorage.getItem('panier') ?? '';
+    this.panier = JSON.parse(this.temp);
+    for (const elt of this.panier) {
+      this.qtesArticlesInPanier.push(elt.qteArticle ?? 0)
+    }
+    return this.qtesArticlesInPanier;
+  }
 
 }
