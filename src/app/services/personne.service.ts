@@ -7,7 +7,7 @@ import { Personne } from '../interfaces/personne';
   providedIn: 'root'
 })
 export class PersonneService {
-  private url = 'http://localhost:3000/creation/';
+  private url = 'http://localhost:3000/personne';
 
   constructor(private http: HttpClient) { }
   
@@ -17,7 +17,7 @@ export class PersonneService {
   addPersonne(p: Personne) {
     return this.http.post<Personne>(this.url, p);
   }
-  getOneById(idUser: number) {
-    return this.http.get<Personne>(this.url + idUser);
-  }
+  // getOneById(idUser: number) {
+  //   return this.http.get<Personne>(this.url + idUser);
+  // }
 }

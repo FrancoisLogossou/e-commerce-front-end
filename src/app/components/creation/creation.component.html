@@ -3,23 +3,23 @@
     <p>Home / Connexion / Création de Compte</p>
 </div>
 <hr>
-<form class="d-flex flex-wrap justify-content-center" (ngSubmit)=ajouterPersonne()>
-    <label for="nom">
+<form #monForm=ngForm class="d-flex flex-wrap justify-content-center" (ngSubmit)=addPersonne()>
+    <label for="nomPersonne">
         Nom :
     </label>
-    <input id="nom" type="text" name="nom">
+    <input id="nom" type="text" name="nomPersonne" [(ngModel)]="personne.nomPersonne" required #nomPersonne=ngModel>
     <label for="prenom">
         Prénom :
     </label>
-    <input id="prenom" type="text" name="prenom">
+    <input id="prenom" type="text" name="prenomPersonne" [(ngModel)]="personne.prenomPersonne">
     <label for="email">
         E-Mail :
     </label>
-    <input id="email" type="text" name="email">
+    <input id="email" type="text" name="emailPersonne" [(ngModel)]="personne.emailPersonne">
     <label for="mdp">
         Mot de passe :
     </label>
-    <input id="mdp" type="text" name="mdp">
+    <input id="mdp" type="password" name="mdpPersonne" [(ngModel)]="personne.mdpPersonne">
     <p>
         En créant votre compte, vous acceptez nos conditions & politique de confidentialité.
     </p>

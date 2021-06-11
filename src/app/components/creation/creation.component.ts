@@ -11,16 +11,17 @@ import { PersonneService } from 'src/app/services/personne.service';
 export class CreationComponent implements OnInit {
   personne: Personne = {};
   personnes: Personne[] = [];
+
   constructor(private personneService: PersonneService) { }
 
   ngOnInit(): void {
-    this.initialize();
   }
 
-  ajouterPersonne() {
+  addPersonne() {
+    console.log(this.personne);
     this.personneService.addPersonne(this.personne).subscribe(
       (res) => {
-        this.initialize();
+        console.log(this.personne);
         this.personne = {};
       }
     );
