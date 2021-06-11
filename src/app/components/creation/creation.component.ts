@@ -18,13 +18,18 @@ export class CreationComponent implements OnInit {
   }
 
   addPersonne() {
-    console.log(this.personne);
-    this.personneService.addPersonne(this.personne).subscribe(
+    this.personneService.getPersonne().subscribe(
       (res) => {
         console.log(this.personne);
         this.personne = {};
       }
-    );
+    )
+    // this.personneService.addPersonne(this.personne).subscribe(
+    //   (res) => {
+    //     console.log(this.personne);
+    //     this.personne = {};
+    //   }
+    // );
   }
   initialize() {
     this.personneService.getAllPersonnes().subscribe(

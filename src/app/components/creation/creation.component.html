@@ -11,7 +11,7 @@
     <label for="prenom">
         Prénom :
     </label>
-    <input id="prenom" type="text" name="prenomPersonne" [(ngModel)]="personne.prenomPersonne">
+    <input id="prenom" type="text" name="prenomPersonne" [(ngModel)]="personne.prenomPersonne" required #nomPersonne=ngModel>
     <label for="email">
         E-Mail :
     </label>
@@ -19,7 +19,7 @@
     <label for="mdp">
         Mot de passe :
     </label>
-    <input id="mdp" type="password" name="mdpPersonne" [(ngModel)]="personne.mdpPersonne">
+    <input id="mdp" type="password" name="mdpPersonne" [(ngModel)]="personne.mdpPersonne" required #nomPersonne=ngModel>
     <p>
         En créant votre compte, vous acceptez nos conditions & politique de confidentialité.
     </p>
