@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -17,7 +18,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RechercheComponent } from './components/recherche/recherche.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CreationComponent } from './components/creation/creation.component';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [

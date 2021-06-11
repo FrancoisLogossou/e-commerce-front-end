@@ -1,0 +1,28 @@
+img{
+    width: 100px;
+    height: 100px;
+}
+.article-panier{
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    
+}
+.quantity-item{
+    width: 20%;
+    height: 50%;
+    display: flex;
+    
+}
+.select-quantity{
+    display: flex;
+    flex-direction: column;
+}
+.input-quantity{
+    width: 100px;
+    height: 50%;
+}
+
+.fa-times-circle{
+    color: #E3570E;
+}

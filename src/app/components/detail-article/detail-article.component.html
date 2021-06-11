@@ -2,11 +2,12 @@
 <div class="ligne"></div>
 <div class= "book-details">
 <figure class="book-images row">
-    <img src={{articles[0].imageArticle}} alt="" class="col-9 h-100 p-0">
+    <img src={{article.imageArticle}} alt="" class="col-9 h-100 p-0">
     <div class="col-3 h-20">img2</div>
     <div class="col-3 h-20">img3</div>
     <div class="col-3 h-20">img4</div>
 </figure>
-<p>Résumé: {{articles[0].resumeArticle}} </p>
-<p>prix : {{articles[0].puht}}</p>
+<p>Résumé: {{article.resumeArticle}} </p>
+<p>prix : {{article.puht}}</p>
 </div>
+<button (click)='ajouterAuPanier()'>ajouter au panier</button>
