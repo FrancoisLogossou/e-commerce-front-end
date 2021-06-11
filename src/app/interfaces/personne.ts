@@ -1,5 +1,5 @@
 export interface Personne {
-    idPersonne      : number,
+    idPersonne?      : number,
     nomPersonne?    : string,
     prenomPersonne? : string,
     emailPersonne?  : string,
