@@ -1,8 +1,7 @@
 <h1>Bienvenue {{ user.prenomPersonne }} {{ user.nomPersonne }} </h1>
 <h2>Nouveautés</h2>
-<div class="ligne"></div>
-<div class="category-container">
-
+<hr>
+<div class="category-container d-flex flex-wrap justify-content-center">
     <div *ngFor="let article of articles" class='home-article'>
         <a [routerLink]='["/detailarticle", article.refArticle]'>
             <img src={{article.imageArticle}} alt="">
@@ -15,13 +14,12 @@
             <button (click)='ajouterAuPanier(article.refArticle ?? 0)'><i class="fas fa-shopping-cart"></i></button>
         </div>
     </div>
-
     <button class="voir-offres">Voir toutes les offres <i class="fas fa-level-down-alt"></i> </button>
 </div>
 
 <h2>Meilleures ventes</h2>
-<div class="ligne"></div>
-<div class="category-container">
+<hr>
+<div class="category-container d-flex flex-wrap justify-content-center">
 
     <div *ngFor="let article of articles" class='home-article'>
         <a [routerLink]='["/detailarticle", article.refArticle]'>
@@ -40,8 +38,8 @@
 </div>
 
 <h2>Notre Sélection</h2>
-<div class="ligne"></div>
-<div class="category-container">
+<hr>
+<div class="category-container d-flex flex-wrap justify-content-center">
     <div *ngFor="let article of articles" class='home-article'>
         <a [routerLink]='["/detailarticle", article.refArticle]'>
             <img src={{article.imageArticle}} alt="">
