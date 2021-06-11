@@ -17,7 +17,7 @@ input {
     border: 1px solid #ea6a0b;
     background-color: #EFF6F3;
 }
-.loupe {
+.droite a:nth-child(4) {
     position: absolute;
     right: 7.5%;
 }
