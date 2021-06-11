@@ -1,10 +1,10 @@
-<h2>Nouveautés</h2>
+<h2>Votre Panier</h2>
 <div class="ligne"></div>
 <div *ngFor="let ligne of ligneArticles" class= "article-panier">
         <img src={{ligne.article!.imageArticle}} alt="">
         <div class="d-flex quantity-item">
             <p>Titre : {{ligne.article!.titreArticle ?? ''}}</p>
-            <input type="number"class="input-quantity" [value]='ligne.qteArticle'>
+            <input type="number"class="input-quantity" [value]='ligne.qteArticle' min='1' readonly>
             <div class="select-quantity">
                 <button (click)='augQuantite(ligne.article!.refArticle ?? 0)' > + </button>
                 <button (click)='dimQuantite(ligne.article!.refArticle ?? 0)'> - </button>
@@ -14,5 +14,4 @@
         </div> 
 </div>
 <p>prix total : {{prixTotal}}</p>
-<button (click)='passerCommande()'>Valider le panier</button>
-
+<button (click)='genererCmd()'>Valider le panier</button>

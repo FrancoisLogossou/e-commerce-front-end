@@ -17,10 +17,10 @@
             <i class="far fa-user fa-lg"></i>
         </a>
         <i id="firstSearchIcon" class="fas fa-search fa-lg"></i>
-        <input type="text" placeholder="Recherche" class="rounded-pill" #toSearch>
-        <a (click)='search(toSearch.value)'>
+        <input (input)='search(toSearch.value)' type="text" placeholder="Recherche" class="rounded-pill" #toSearch>
+        <!-- <a (click)='search(toSearch.value)'></a> -->
             <i id="secondSearchIcon" class="fas fa-search fa-lg loupe"></i>
-        </a>
+        <!-- </a> -->
         <a routerLink='/panier'>
             <i class="fas fa-shopping-cart fa-lg"></i>
         </a>
