@@ -37,3 +37,10 @@ button {
     border: none;
     color: #fff;
 }
+a{
+    text-decoration: none;
+    color: #ea6a0b;
+}
+a:hover{
+    font-weight: bold;
+}

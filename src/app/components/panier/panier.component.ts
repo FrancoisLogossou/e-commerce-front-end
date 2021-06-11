@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Article } from 'src/app/interfaces/article';
 import { LignePanier } from 'src/app/interfaces/ligne-panier';
 import { GestionDuPanierService } from 'src/app/services/gestion-du-panier.service';
@@ -14,7 +15,8 @@ export class PanierComponent implements OnInit {
   prixTotal = 0;
   
 
-  constructor(private gestionDuPanier: GestionDuPanierService) { }
+  constructor(private gestionDuPanier: GestionDuPanierService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.ligneArticles = this.gestionDuPanier.recupererPanier();
@@ -37,5 +39,8 @@ dimQuantite(refArticle : number){
   this.gestionDuPanier.recupererPanier();
 }
 
+passerCommande(){
+  this.router.navigateByUrl('/commande');
+}
 
 }
