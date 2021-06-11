@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Article } from 'src/app/interfaces/article';
 import { Personne } from 'src/app/interfaces/personne';
 import { ArticleService } from 'src/app/services/article.service';
+import { GestionDuPanierService } from 'src/app/services/gestion-du-panier.service';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,7 @@ export class HomeComponent implements OnInit {
   user: Personne = {};
   article: Article = {};
   articles: Article[] = [];
-  constructor(private articleService: ArticleService) { }
+  constructor(private articleService: ArticleService, private gestionDuPanier : GestionDuPanierService) { }
 
   ngOnInit(): void {
     this.initialize();
@@ -30,6 +31,13 @@ export class HomeComponent implements OnInit {
         this.articles = res;
       }
     )
+  }
+
+  ajouterAuPanier(refArticle: number){
+    this.articleService.getOneArticleById(refArticle.toString()).subscribe((res) => { 
+      this.article = res; 
+      this.gestionDuPanier.ajouterAuPanier(this.article);
+    });
   }
 }
 
