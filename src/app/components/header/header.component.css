@@ -1,6 +1,10 @@
 *{
     outline: none;
 }
+a {
+    text-decoration: none;
+    color: #212529;
+}
 header {
     padding: 20px;
     border-bottom: 1px solid #8B8A8F;
