@@ -9,9 +9,6 @@ header {
     padding: 20px;
     border-bottom: 1px solid #8B8A8F;
 }
-.gauche {
-    display: none;
-}
 .milieu p {
     margin-bottom: 0px;
     padding-top: 25px;
@@ -34,14 +31,14 @@ img {
     width: clamp(3.125rem, 0.7813rem + 10.4167vw, 6.25rem);
 }
 input {
-    padding: 5px 45px 5px 20px;
+    padding: 5px 50px 5px 20px;
     width: 80%;
     border: 1px solid #ea6a0b;
     background-color: #EFF6F3;
 }
 .droite .fa-search {
     position: absolute;
-    right: clamp(4.5rem, 2.1602rem + 6.2291vw, 8rem);
+    right: clamp(6.5rem, 4.4944rem + 5.3393vw, 9.5rem);
 }
 .milieu {
     width: 60%;
@@ -57,10 +54,6 @@ input {
     }
 }
 @media screen and (max-width: 600px) {
-    .gauche {
-        display: block;
-        width: 10%;
-    }
     .milieu {
         width: 60%;
     }
