@@ -1,25 +1,27 @@
-<header class="d-flex align-items-center justify-content-between">
-    <div class="gauche d-flex align-items-center justify-content-around">
+<header class="d-flex justify-content-between align-items-center">
+    <div class="gauche">
         <a routerLink='/menu' class="burger">
             <i class="fas fa-bars fa-lg"></i>
         </a>
-        <img class="logoIB"
-            src="https://media-exp1.licdn.com/dms/image/C4E0BAQFoVKRI1HMkOw/company-logo_200_200/0/1519882245722?e=2159024400&v=beta&t=d8sbFkm6K_rJie2G4_flyxbin8XMUPVVT0zTTM6SFnA"
-            alt="logo d'Ib " routerLink='/home'>
     </div>
-
-    <div class="milieu">
-
+    <div class="milieu d-flex justify-content-center">
+        <figure>
+            <img class="logoIB"
+                src="https://media-exp1.licdn.com/dms/image/C4E0BAQFoVKRI1HMkOw/company-logo_200_200/0/1519882245722?e=2159024400&v=beta&t=d8sbFkm6K_rJie2G4_flyxbin8XMUPVVT0zTTM6SFnA"
+                alt="logo d'Ib"
+                routerLink='/home'>
+        </figure>
+        <p>
+            Librairie
+        </p>
     </div>
-
-    <div class="droite d-flex align-items-center justify-content-around">
+    <div class="droite d-flex justify-content-around align-content-center align-self-end">
         <a routerLink='/connexion'>
             <i class="far fa-user fa-lg"></i>
         </a>
-        <i id="firstSearchIcon" class="fas fa-search fa-lg"></i>
         <input (input)='search(toSearch.value)' type="text" placeholder="Recherche" class="rounded-pill" #toSearch>
         <!-- <a (click)='search(toSearch.value)'></a> -->
-            <i id="secondSearchIcon" class="fas fa-search fa-lg loupe"></i>
+            <i class="fas fa-search fa-lg loupe"></i>
         <!-- </a> -->
         <a routerLink='/panier'>
             <i class="fas fa-shopping-cart fa-lg"></i>
