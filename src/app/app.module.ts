@@ -7,7 +7,6 @@ import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ConnexionComponent } from './components/connexion/connexion.component';
 import { LivreComponent } from './components/livre/livre.component';
-import { MenuComponent } from './components/menu/menu.component';
 import { PersonneComponent } from './components/personne/personne.component';
 import { AdresseComponent } from './components/adresse/adresse.component';
 import { DetailArticleComponent } from './components/detail-article/detail-article.component';
@@ -27,7 +26,6 @@ import { CommandeComponent } from './components/commande/commande.component';
     NotFoundComponent,
     ConnexionComponent,
     LivreComponent,
-    MenuComponent,
     PersonneComponent,
     AdresseComponent,
     HeaderComponent,

@@ -2,29 +2,5 @@
     box-sizing: border-box;
 }
 .main {
-    display: flex;
-    flex-wrap: wrap;
-}
-app-menu {
-    width: 20%;
-}
-.mainRight {
-    margin: 20px auto;
-    width: 70%;
-    min-height: 78.2vh;
-}
-h1{
-    text-align: center;
-    text-decoration: #8B8A8F underline;
-    color: #ea6a0b;
-}
-@media screen and (max-width: 509px){
-    app-menu{
-        display: none;
-    }
-}
-footer{
-    color: white;
-    text-align: center;
-    background-color: #ea6a0b;
+    padding: 50px;
 }
