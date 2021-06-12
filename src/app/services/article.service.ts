@@ -22,5 +22,6 @@ export class ArticleService {
   getArticlesBySearch(toSearch : string){
     return this.http.get<Array<Article>>(this.url3+toSearch);
   }
+  
 }
 

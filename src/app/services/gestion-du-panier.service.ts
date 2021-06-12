@@ -69,7 +69,7 @@ export class GestionDuPanierService {
     this.panier = JSON.parse(this.temp);
     for (const elt of this.panier) {
       this.prixTotal += (elt.qteArticle ?? 0) * (elt.article!.puht ?? 0);
-      this.prixTotal = +this.prixTotal.toFixed(2)
+      this.prixTotal = +this.prixTotal;
     }
     return this.prixTotal;
   }

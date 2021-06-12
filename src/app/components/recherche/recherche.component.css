@@ -1,6 +1,75 @@
 .masque {
     display: none;
 }
+hr {
+    height: 2px;
+}
+.category-container {
+    width: 100%;
+}
+.home-article {
+    margin-bottom: 50px;
+    width: 250px;
+    color: #fff;
+    border-radius: 10px;
+    background-color: #ea6a0b;
+}
+.p {
+    text-align: center;
+    width: 100%;
+}
+p:nth-child(1) {
+    height: 70px;
+}
+p:nth-child(2) {
+    height: 70px;
+}
+p:nth-child(3) {
+    height: 210px;
+}
+#detailArticle1, #detailArticle2 {
+    width: 100%;
+}
+[id*="Article"] {
+    color: #000;
+}
+#titreArticle {
+    width: 100%;
+    text-align: center;
+}
+#resumeArticle {
+    text-align: justify;
+}
+.souligne {
+    text-decoration: underline;
+}
+.home-article-title {
+    padding: 10px;
+}
+a:link { 
+    text-decoration: none; 
+}
+img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+.ajoutPanier {
+    margin-bottom: 20px;
+}
+.ajoutPanier input {
+    margin-right: 20px;
+    text-align: center;
+    border-radius: 7px;
+    width: 60px;
+}
+.btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+}
+i {
+    font-size: 1.2em;
+}
 @media screen and (max-width: 600px) {
     .masque {
         display: block;

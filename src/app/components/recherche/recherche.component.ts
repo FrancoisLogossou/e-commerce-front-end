@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Article } from 'src/app/interfaces/article';
+import { Auteur } from 'src/app/interfaces/auteur';
 import { ArticleService } from 'src/app/services/article.service';
 import { GestionDuPanierService } from 'src/app/services/gestion-du-panier.service';
 
@@ -13,6 +14,7 @@ export class RechercheComponent implements OnInit {
   toSearch = '';
   article: Article = {};
   articles: Article[] = [];
+  auteur: Auteur[] = [];
 
   constructor(private articleService: ArticleService,
     private gestionDuPanier: GestionDuPanierService,
@@ -25,7 +27,7 @@ export class RechercheComponent implements OnInit {
         this.toSearch = value.get('toSearch') ?? '';           
         this.articleService.getArticlesBySearch(this.toSearch).subscribe((res) => {
           this.articles = res;
-          console.log(this.articles)
+          // console.log(this.articles)
         });
       });
   }
