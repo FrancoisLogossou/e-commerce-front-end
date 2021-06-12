@@ -11,7 +11,7 @@
                 <p>Titre: {{article.titreArticle}}</p>
                 <p>Format: {{article.puht}}</p>
             </div>
-            <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' #qte>
+            <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte>
             <div class="select-quantity">
             </div>
             <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i class="fas fa-shopping-cart"></i></button>
@@ -32,7 +32,7 @@
                 <p>Titre: {{article.titreArticle}}</p>
                 <p>Format: {{article.puht}}</p>
             </div>
-            <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' #qte>
+            <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte>
             <div class="select-quantity">
             </div>
             <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i class="fas fa-shopping-cart"></i></button>
@@ -54,7 +54,7 @@
                 <p>Titre: {{article.titreArticle}}</p>
                 <p>Format: {{article.puht}}</p>
             </div>
-            <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' #qte>
+            <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte>
             <div class="select-quantity">
             </div>
             <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i class="fas fa-shopping-cart"></i></button>

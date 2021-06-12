@@ -15,34 +15,47 @@ export class CommandeComponent implements OnInit {
 
   lignesCommande: LignePanier[] = [];
   prixTotal = 0;
-  
+
   constructor(
     private gestionDuPanier: GestionDuPanierService,
     private gestionCommande: GestionCommandeService,
     private router: Router
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.initialize();
   }
 
-initialize() {
-  this.lignesCommande = this.gestionDuPanier.recupererPanier();
-  this.prixTotal = this.gestionDuPanier.calculPrixTotal();
-}
-
-genererCmd(){
-  for (const elt of this.lignesCommande) {
-    console.log((elt.qteArticle ?? 0));
-    this.updateStock((elt.article?.refArticle ?? 0), ((elt.article?.qteStock ?? 0) - (elt.qteArticle ?? 0)));
+  initialize() {
+    this.lignesCommande = this.gestionDuPanier.recupererPanier();
+    this.prixTotal = this.gestionDuPanier.calculPrixTotal();
   }
-   //this.router.navigateByUrl('/home')
-}
 
-updateStock(refAricle : number, qteStock : number){
-  this.gestionCommande.updateStock(refAricle, qteStock).subscribe(
-    (res)=> {
-    }
-  )
-}
+  genererCmd() {
+
+    this.order();
+
+    //localStorage.removeItem('panier');
+    //this.router.navigateByUrl('/home')
+  }
+
+  order() {
+    this.gestionCommande.insertCommande().subscribe(
+      (insertedCommande) => {
+        this.gestionCommande.insertListCommande(this.lignesCommande, insertedCommande.idCommande ?? 0).subscribe(
+          (listCommandeResult) => {
+            for (const elt of this.lignesCommande) {
+              this.gestionCommande.updateStock((elt.article?.refArticle ?? 0), ((elt.article?.qteStock ?? 0) - (elt.qteArticle ?? 0))).subscribe(
+                (updateStockRes) => {
+
+                }
+              )
+            }
+            localStorage.removeItem('panier');
+            this.router.navigateByUrl('/home')
+          }
+        )
+      }
+    )
+  }
 }
