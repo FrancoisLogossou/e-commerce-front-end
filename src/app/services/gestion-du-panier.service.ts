@@ -17,14 +17,14 @@ export class GestionDuPanierService {
 
   constructor() { }
 
-  ajouterAuPanier(article: Article) {
+  ajouterAuPanier(article: Article, qte : number) {
     if (localStorage.getItem('panier')) {
       this.findArticle(article.refArticle ?? 0)
       if (this.ligneTemp2.qteArticle) {
         this.ligneTemp2.qteArticle++;
       }
       else {
-        this.panier.push(this.ligneTemp2 = { qteArticle: 1, article: article });
+        this.panier.push(this.ligneTemp2 = { qteArticle: qte, article: article });
       }
       localStorage.setItem('panier', JSON.stringify(this.panier));
     }
