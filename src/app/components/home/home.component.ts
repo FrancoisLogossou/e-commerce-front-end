@@ -33,10 +33,10 @@ export class HomeComponent implements OnInit {
     )
   }
 
-  ajouterAuPanier(refArticle: number){
+  ajouterAuPanier(refArticle: number, qte: string){
     this.articleService.getOneArticleById(refArticle.toString()).subscribe((res) => { 
       this.article = res; 
-      this.gestionDuPanier.ajouterAuPanier(this.article);
+      this.gestionDuPanier.ajouterAuPanier(this.article, +qte);
     });
   }
 }

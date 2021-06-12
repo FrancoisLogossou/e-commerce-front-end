@@ -3,20 +3,21 @@
 </div>
 <h2>Article(s) correspondant(s) à votre recherche "{{toSearch}}"</h2>
 <hr>
-<div class="category-container">
-    <a *ngFor="let article of articles" [routerLink]='["/detailarticle", article.refArticle]'>
-        <div class='home-article'>
+<div class="category-container d-flex flex-wrap justify-content-center">
+    <div *ngFor="let article of articles" class='home-article'>
+        <a [routerLink]='["/detailarticle", article.refArticle]'>
             <img src={{article.imageArticle}} alt="">
-            <div class="home-article-items">
-                <div class="home-article-title">
-                    <p>Titre: {{article.titreArticle}}</p>
-                    <p>Format: {{article.puht}}</p>
-                </div>
-                <ng-container *ngIf="article.qteStock != 0">
-                    <button><i class="fas fa-shopping-cart"></i></button>
-                </ng-container>
+        </a>
+        <div class="home-article-items">
+            <div class="home-article-title">
+                <p>Titre: {{article.titreArticle}}</p>
+                <p>Format: {{article.puht}}</p>
             </div>
+            <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' #qte>
+            <div class="select-quantity">
+            </div>
+            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i class="fas fa-shopping-cart"></i></button>
         </div>
-    </a>
+    </div>
     <button class="voir-offres">Voir toutes les offres <i class="fas fa-level-down-alt"></i> </button>
 </div>
