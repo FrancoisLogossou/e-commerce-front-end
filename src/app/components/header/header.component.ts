@@ -7,14 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  
+  toSearch2: string = '';
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-  }
-  search(toSearch: string){
 
-    this.router.navigateByUrl('/recherche/' +toSearch)
+  }
+  search(toSearch2: string){
+
+    this.router.navigateByUrl('/recherche/' + toSearch2)
   }
   // [routerLink]='["/recherche", toSearch]'
 }

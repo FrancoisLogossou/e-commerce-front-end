@@ -1,5 +1,8 @@
+<div class="masque">
+    <input (input)='search(toSearch2.value)' type="search" #toSearch2>
+</div>
 <h2>Article(s) correspondant(s) à votre recherche "{{toSearch}}"</h2>
-<div class="ligne"></div>
+<hr>
 <div class="category-container">
     <a *ngFor="let article of articles" [routerLink]='["/detailarticle", article.refArticle]'>
         <div class='home-article'>

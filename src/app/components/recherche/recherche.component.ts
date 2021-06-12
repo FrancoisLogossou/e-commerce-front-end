@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Article } from 'src/app/interfaces/article';
 import { ArticleService } from 'src/app/services/article.service';
 import { GestionDuPanierService } from 'src/app/services/gestion-du-panier.service';
@@ -13,19 +13,25 @@ export class RechercheComponent implements OnInit {
   toSearch = '';
   article: Article = {};
   articles: Article[] = [];
+
   constructor(private articleService: ArticleService,
     private gestionDuPanier: GestionDuPanierService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(
       (value) => {
-        this.toSearch = value.get('toSearch') ?? '';
+        this.toSearch = value.get('toSearch') ?? '';           
         this.articleService.getArticlesBySearch(this.toSearch).subscribe((res) => {
           this.articles = res;
           console.log(this.articles)
         });
       });
+  }
+
+  search(toSearch: string){
+    this.router.navigateByUrl('/recherche/' + toSearch)
   }
 
   ajouterAuPanier(refArticle: number){
