@@ -30,10 +30,10 @@ export class DetailArticleComponent implements OnInit {
       });
   }
 
-  ajouterAuPanier(){
+  ajouterAuPanier(qte: string){
     this.articleService.getOneArticleById(this.refArticle.toString()).subscribe((res) => { 
       this.article = res; 
-      this.gestionDuPanier.ajouterAuPanier(this.article);
+      this.gestionDuPanier.ajouterAuPanier(this.article, +qte);
     });
 
   }
