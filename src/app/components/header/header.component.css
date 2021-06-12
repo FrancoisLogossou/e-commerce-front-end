@@ -41,7 +41,7 @@ input {
 }
 .droite .fa-search {
     position: absolute;
-    right: clamp(4.0625rem, 2.8090rem + 3.3370vw, 5.9375rem);
+    right: clamp(4.5rem, 2.1602rem + 6.2291vw, 8rem);
 }
 .milieu {
     width: 60%;
