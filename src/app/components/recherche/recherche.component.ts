@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Article } from 'src/app/interfaces/article';
+import { Auteur } from 'src/app/interfaces/auteur';
 import { ArticleService } from 'src/app/services/article.service';
 import { GestionDuPanierService } from 'src/app/services/gestion-du-panier.service';
 
@@ -11,6 +12,7 @@ import { GestionDuPanierService } from 'src/app/services/gestion-du-panier.servi
 })
 export class RechercheComponent implements OnInit {
   toSearch = '';
+  auteur: Auteur = {};
   article: Article = {};
   articles: Article[] = [];
 

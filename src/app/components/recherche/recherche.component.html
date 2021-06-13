@@ -11,6 +11,7 @@
         <div class="home-article-items">
             <div class="home-article-title">
                 <p>Titre: {{article.titreArticle}}</p>
+                <p>auteurs: {{auteur.nomAuteur}}</p>
                 <p>Format: {{article.puht}}</p>
             </div>
             <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte>

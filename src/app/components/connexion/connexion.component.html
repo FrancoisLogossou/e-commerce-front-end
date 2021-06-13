@@ -1,8 +1,7 @@
-<h1>Page de connexion</h1>
-
+<ng-container *ngIf="isConnected() == false; else sinon">
+    <h1>Page de connexion</h1>
 <form #monForm=ngForm (ngSubmit)=connexion()>
 
-    <!-- voir pour la déconnexion, dans le menu, si un utilisateur est connecté, connexion => déconnexion -->
     <div>
         Adresse Email : <input type=email name=emailUser [(ngModel)]="personne.emailPersonne" required #email=ngModel>
     </div>
@@ -19,7 +18,6 @@
         <button class="btn btn-outline-success" [disabled]="!monForm.valid">
             se connecter
         </button>
-
     </div>
 </form>
 
@@ -32,3 +30,13 @@
     Créez en un !
     <button class="fas fa-user-plus" routerLink="/creation"></button>
 </div>
+</ng-container> 
+
+ <ng-template #sinon>
+     <h1>Information de l'utilisateur</h1>
+     nom
+<h3>déconnexion</h3>
+<button class="btn btn-outline-danger" (click)="deconnexion()">
+    se déconnecter
+</button>
+</ng-template>
