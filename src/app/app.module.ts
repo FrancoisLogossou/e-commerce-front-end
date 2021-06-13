@@ -18,6 +18,7 @@ import { RechercheComponent } from './components/recherche/recherche.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CreationComponent } from './components/creation/creation.component';
 import { CommandeComponent } from './components/commande/commande.component';
+import { VoirOffresComponent } from './components/voir-offres/voir-offres.component';
 import { ConfirmationCommandeComponent } from './components/confirmation-commande/confirmation-commande.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';import {trigger,state,style,animate,transition}from '@angular/animations';
@@ -39,6 +40,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';i
     FooterComponent,
     CreationComponent,
     CommandeComponent,
+    VoirOffresComponent,
     ConfirmationCommandeComponent,
   ],
   imports: [
