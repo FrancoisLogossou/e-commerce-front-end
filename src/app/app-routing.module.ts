@@ -13,21 +13,31 @@ import { CreationComponent } from './components/creation/creation.component';
 import { CommandeComponent } from './components/commande/commande.component';
 import { AuthGuard } from './guards/auth.guard';
 import { VoirOffresComponent } from './components/voir-offres/voir-offres.component';
+<<<<<<< HEAD
+import { AdminComponent } from './components/admin/admin.component';
+import { AdminGuard } from './guards/admin.guard';
+
+=======
 import { ConfirmationCommandeComponent } from './components/confirmation-commande/confirmation-commande.component';
+>>>>>>> 37aa57886520ccc35b8d1f1e9fbd274f0269d1ac
 
 const routes: Routes = [
-  { path: "recherche/:toSearch", component: RechercheComponent },
+  { path: "recherche/:toSearch", component: RechercheComponent  },
   { path: "adresse", component: AdresseComponent},
   { path: "connexion", component: ConnexionComponent},
   { path: "creation", component: CreationComponent},
-  { path: "home", component: HomeComponent},
+  { path: "home", component: HomeComponent },
   { path: "voir-offres/:option", component: VoirOffresComponent }, 
   { path: "detailarticle/:refArticle", component: DetailArticleComponent},
   { path: "livre", component: LivreComponent},
   { path: "personne", component: PersonneComponent},
-  { path: "panier", component: PanierComponent},
+  { path: "panier", component: PanierComponent },
   { path: "commande", component: CommandeComponent, canActivate: [AuthGuard]},
+<<<<<<< HEAD
+  { path: "admin", component: AdminComponent, canActivate: [AdminGuard] },
+=======
   { path: "confirmation-commande", component: ConfirmationCommandeComponent},
+>>>>>>> 37aa57886520ccc35b8d1f1e9fbd274f0269d1ac
   { path: "not-found", component: NotFoundComponent},
   { path: "", redirectTo: "/home", pathMatch: "full"},
   { path: "**", redirectTo: "/not-found"}

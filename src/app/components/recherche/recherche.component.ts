@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Article } from 'src/app/interfaces/article';
 import { Auteur } from 'src/app/interfaces/auteur';
+import { Livre } from 'src/app/interfaces/livre';
 import { ArticleService } from 'src/app/services/article.service';
 import { GestionDuPanierService } from 'src/app/services/gestion-du-panier.service';
 
@@ -14,7 +15,7 @@ export class RechercheComponent implements OnInit {
   toSearch = '';
   auteur: Auteur = {};
   article: Article = {};
-  articles: Article[] = [];
+  articles: Livre[] = [];
 
   constructor(private articleService: ArticleService,
     private gestionDuPanier: GestionDuPanierService,
@@ -34,6 +35,7 @@ export class RechercheComponent implements OnInit {
 
   search(toSearch: string){
     this.router.navigateByUrl('/recherche/' + toSearch)
+    
   }
 
   ajouterAuPanier(refArticle: number, qte:string){
