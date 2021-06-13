@@ -14,6 +14,9 @@
     height: 300px;
     border-radius: 20px;
 }
+.categoryContainer {
+    margin-top: 50px;
+}
 h2 {
     font-family: Segoe UI;
     font-size: 25px;
@@ -25,15 +28,26 @@ h2 {
 hr {
     height: 2px;
 }
-.rchchLivre {
-    width:100%;
+figure {
+    margin-bottom: 0;
+}
+.selectionAccueil {
+    width: 100%;
+    height: 280px;
+}
+.selectionAccueil img {
+    height: 100%;
 }
 .home-article {
+    margin: 0 20px 50px 20px;
     margin-bottom: 50px;
-    width: 250px;
+    width: 15%;
     color: #fff;
     border-radius: 10px;
     background-color: #ea6a0b;
+}
+p {
+    margin-bottom: 5px;
 }
 .p {
     text-align: center;
@@ -43,7 +57,7 @@ p:nth-child(1) {
     height: 70px;
 }
 p:nth-child(2) {
-    height: 210px;
+    height: 260px;
 }
 [id*="Article"] {
     color: #000;
@@ -51,6 +65,9 @@ p:nth-child(2) {
 #titreArticle {
     width: 100%;
     text-align: center;
+}
+#prix {
+    width: 45px;
 }
 #resumeArticle {
     text-align: justify;
@@ -105,31 +122,49 @@ img {
 .containerVoirOffre {
     width: 100%;
 }
-.voir-offres {
+.lienVoirOffres {
+    width: 100%;
+}
+.voirOffres {
+    margin: 10px 0;
     width: 300px;
     height: 50px;
-    padding-left: 20px;
     color: #ea6a0b;
     border: 1px solid #ea6a0b;
     border-radius: 30px;
     background: rgba(254, 241, 235, 0.75);
-    margin: 50px 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 }
 
 .fa-level-down-alt {
  color: #ea6a0b;
  transform: rotate(-90deg);
 }
-
-.voir-offres:hover{
+.voirOffres:hover{
     color: white;
     border: 1px solid white;
     background: rgba(234, 106, 11, 0.8);
 }
 
-.voir-offres:hover .fa-level-down-alt{
+.voirOffres:hover .fa-level-down-alt{
     color: white;
+}
+@media screen and (max-width: 1459.99px) {
+    .home-article {
+        width: 20%;
+    }
+}
+@media screen and (max-width: 1119.99px) {
+    .home-article {
+        width: 25%;
+    }
+}
+@media screen and (max-width: 915.99px) {
+    .home-article {
+        width: 30%;
+    }
+}
+@media screen and (max-width: 779.99px) {
+    .home-article {
+        width: 50%;
+    }
 }

@@ -11,78 +11,123 @@
         </ng-container>
     </owl-carousel-o>
 </div>
-<h2>Nouveautés</h2>
-<hr>
-<div class="category-container d-flex flex-wrap justify-content-center">
-    <div *ngFor="let article of nouveautes" class='home-article'>
-        <a [routerLink]='["/detailarticle", article.refArticle]'>
-            <img src={{article.imageArticle}} alt="">
-        </a>
-        <div class="home-article-items">
-            <div class="home-article-title">
-                <p>Titre: {{article.titreArticle}}</p>
-                <p>Format: {{article.puht}}</p>
+<div class="categoryContainer">
+    <h2>Nouveautés</h2>
+    <hr>
+    <div class=" d-flex flex-wrap justify-content-around">
+        <div *ngFor="let article of nouveautes" class="home-article">
+            <a [routerLink]='["/detailarticle", article.refArticle]'>
+                <figure class="selectionAccueil">
+                    <img src={{article.imageArticle}} alt="{{article.titreArticle}}">
+                </figure>
+            </a>
+            <div class="home-article-items">
+                <div class="home-article-title">
+                    <p class="d-flex flex-wrap">
+                        <span class="p"><span class="souligne">Titre</span> : </span><span id="titreArticle">{{article.titreArticle}}</span>
+                    </p>
+                    <p class="d-flex flex-wrap">
+                        <span class="p"><span class="souligne">Résumé</span> : </span><span id="resumeArticle">{{article.resumeArticle}}</span>
+                    </p>
+                    <p class="d-flex justify-content-between">
+                        <span id="prix"><span class="souligne">Prix</span> :</span> <span id="prixArticle">{{article.puht}} €</span>
+                    </p>
+                </div>
+                <div class="d-flex justify-content-around ajoutPanier">
+                    <label>
+                        Qté :
+                    </label>
+                    <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte readonly>
+                    <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'>
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
             </div>
-            <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte readonly>
-            <div class="select-quantity">
-            </div>
-            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'>
-                <i class="fas fa-shopping-cart"></i>
-            </button>
         </div>
     </div>
-    <a [routerLink]='["/voir-offres","nouveautes"]'>
-        <button class="voir-offres">Voir toutes les offres <i class="fas fa-level-down-alt"></i> </button>
-    </a>
+    <div class="lienVoirOffres d-flex justify-content-center">
+        <a [routerLink]='["/voir-offres","nouveautes"]'>
+            <button class="d-flex justify-content-around align-items-center voirOffres">Voir toutes les offres <i class="fas fa-level-down-alt"></i> </button>
+        </a>
+    </div>
 </div>
-
-<h2>Meilleures ventes</h2>
-<hr>
-<div class="category-container d-flex flex-wrap justify-content-center">
-    <div *ngFor="let article of meilleuresVentes" class='home-article'>
-        <a [routerLink]='["/detailarticle", article.refArticle]'>
-            <img src={{article.imageArticle}} alt="">
-        </a>
-        <div class="home-article-items">
-            <div class="home-article-title">
-                <p>Titre: {{article.titreArticle}}</p>
-                <p>Format: {{article.puht}}</p>
+<div class="categoryContainer">
+    <h2>Meilleures ventes</h2>
+    <hr>
+    <div class=" d-flex flex-wrap justify-content-around">
+        <div *ngFor="let article of meilleuresVentes" class='home-article'>
+            <a [routerLink]='["/detailarticle", article.refArticle]'>
+                <figure class="selectionAccueil">
+                    <img src={{article.imageArticle}} alt="{{article.titreArticle}}">
+                </figure>
+            </a>
+            <div class="home-article-items">
+                <div class="home-article-title">
+                    <p class="d-flex flex-wrap">
+                        <span class="p"><span class="souligne">Titre</span> : </span><span id="titreArticle">{{article.titreArticle}}</span>
+                    </p>
+                    <p class="d-flex flex-wrap">
+                        <span class="p"><span class="souligne">Résumé</span> : </span><span id="resumeArticle">{{article.resumeArticle}}</span>
+                    </p>
+                    <p class="d-flex justify-content-between">
+                        <span id="prix"><span class="souligne">Prix</span> :</span> <span id="prixArticle">{{article.puht}} €</span>
+                    </p>
+                </div>
+                <div class="d-flex justify-content-around ajoutPanier">
+                    <label>
+                        Qté :
+                    </label>
+                    <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte readonly>
+                    <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'>
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
             </div>
-            <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte readonly>
-            <div class="select-quantity">
-            </div>
-            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'>
-                <i class="fas fa-shopping-cart"></i>
-            </button>
         </div>
     </div>
-    <a [routerLink]='["/voir-offres","meilleures-ventes"]'>
-        <button class="voir-offres">Voir toutes les offres <i class="fas fa-level-down-alt"></i> </button>
-    </a>
+    <div class="lienVoirOffres d-flex justify-content-center">
+        <a [routerLink]='["/voir-offres","meilleures-ventes"]'>
+            <button class="d-flex justify-content-around align-items-center voirOffres">Voir toutes les offres <i class="fas fa-level-down-alt"></i> </button>
+        </a>
+    </div>
 </div>
-
-
-<h2>Notre Sélection</h2>
-<hr>
-<div class="category-container d-flex flex-wrap justify-content-center">
-    <div *ngFor="let article of genreFormation" class='home-article'>
-        <a [routerLink]='["/detailarticle", article.refArticle]'>
-            <img src={{article.imageArticle}} alt="">
-        </a>
-        <div class="home-article-items">
-            <div class="home-article-title">
-                <p>Titre: {{article.titreArticle}}</p>
-                <p>Format: {{article.puht}}</p>
+<div class="categoryContainer">
+    <h2>Notre Sélection</h2>
+    <hr>
+    <div class=" d-flex flex-wrap justify-content-around">
+        <div *ngFor="let article of genreFormation" class='home-article'>
+            <a [routerLink]='["/detailarticle", article.refArticle]'>
+                <figure class="selectionAccueil">
+                    <img src={{article.imageArticle}} alt="{{article.titreArticle}}">
+                </figure>
+            </a>
+            <div class="home-article-items">
+                <div class="home-article-title">
+                    <p class="d-flex flex-wrap">
+                        <span class="p"><span class="souligne">Titre</span> : </span><span id="titreArticle">{{article.titreArticle}}</span>
+                    </p>
+                    <p class="d-flex flex-wrap">
+                        <span class="p"><span class="souligne">Résumé</span> : </span><span id="resumeArticle">{{article.resumeArticle}}</span>
+                    </p>
+                    <p class="d-flex justify-content-between">
+                        <span id="prix"><span class="souligne">Prix</span> :</span> <span id="prixArticle">{{article.puht}} €</span>
+                    </p>
+                </div>
+                <div class="d-flex justify-content-around ajoutPanier">
+                    <label>
+                        Qté :
+                    </label>
+                    <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte readonly>
+                    <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'>
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
             </div>
-            <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte readonly>
-            <div class="select-quantity">
-            </div>
-            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'>
-                <i class="fas fa-shopping-cart"></i>
-            </button>
         </div>
     </div>
-    <a [routerLink]='["/voir-offres","genre-formation"]'>
-        <button class="voir-offres">Voir toutes les offres <i class="fas fa-level-down-alt"></i> </button>
-    </a>
+    <div class="lienVoirOffres d-flex justify-content-center">
+        <a [routerLink]='["/voir-offres","genre-formation"]'>
+            <button class="d-flex justify-content-around align-items-center voirOffres">Voir toutes les offres <i class="fas fa-level-down-alt"></i> </button>
+        </a>
+    </div>
 </div>
