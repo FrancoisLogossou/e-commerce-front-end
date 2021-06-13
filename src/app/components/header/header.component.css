@@ -13,6 +13,7 @@ header {
     margin-bottom: 0px;
     padding-top: 25px;
     font-size: clamp(1rem, -0.8750rem + 8.3333vw, 3.5rem);
+    color: #8a898e;
     font-style: oblique;
 }
 i {
