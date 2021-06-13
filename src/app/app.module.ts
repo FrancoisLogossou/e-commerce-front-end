@@ -19,6 +19,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CreationComponent } from './components/creation/creation.component';
 import { CommandeComponent } from './components/commande/commande.component';
 import { VoirOffresComponent } from './components/voir-offres/voir-offres.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { VoirOffresComponent } from './components/voir-offres/voir-offres.compon
     CreationComponent,
     CommandeComponent,
     VoirOffresComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,

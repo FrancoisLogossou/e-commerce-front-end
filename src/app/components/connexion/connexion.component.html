@@ -34,7 +34,9 @@
 
  <ng-template #sinon>
      <h1>Information de l'utilisateur</h1>
-     nom
+     nom: {{user.nomUser}}
+     prenom: {{user.prenomUser}}
+     email: {{user.emailUser}}
 <h3>déconnexion</h3>
 <button class="btn btn-outline-danger" (click)="deconnexion()">
     se déconnecter

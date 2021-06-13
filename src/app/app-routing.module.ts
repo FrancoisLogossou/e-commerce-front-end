@@ -13,19 +13,23 @@ import { CreationComponent } from './components/creation/creation.component';
 import { CommandeComponent } from './components/commande/commande.component';
 import { AuthGuard } from './guards/auth.guard';
 import { VoirOffresComponent } from './components/voir-offres/voir-offres.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { AdminGuard } from './guards/admin.guard';
+
 
 const routes: Routes = [
-  { path: "recherche/:toSearch", component: RechercheComponent },
+  { path: "recherche/:toSearch", component: RechercheComponent  },
   { path: "adresse", component: AdresseComponent},
   { path: "connexion", component: ConnexionComponent},
   { path: "creation", component: CreationComponent},
-  { path: "home", component: HomeComponent},
+  { path: "home", component: HomeComponent },
   { path: "voir-offres/:option", component: VoirOffresComponent }, 
   { path: "detailarticle/:refArticle", component: DetailArticleComponent},
   { path: "livre", component: LivreComponent},
   { path: "personne", component: PersonneComponent},
-  { path: "panier", component: PanierComponent},
+  { path: "panier", component: PanierComponent },
   { path: "commande", component: CommandeComponent, canActivate: [AuthGuard]},
+  { path: "admin", component: AdminComponent, canActivate: [AdminGuard] },
   { path: "not-found", component: NotFoundComponent},
   { path: "", redirectTo: "/home", pathMatch: "full"},
   { path: "**", redirectTo: "/not-found"}

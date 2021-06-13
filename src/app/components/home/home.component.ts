@@ -35,25 +35,25 @@ export class HomeComponent implements OnInit {
     this.articleService.getAllArticles().subscribe(
       (res) => {
         this.articles = res;
-        this.user = JSON.parse(localStorage.getItem('user')?? '') ;
+ 
       }
     )
     this.articleService.getNouveautes().subscribe(
       (res) => {
         this.nouveautes = res;
-        this.user = JSON.parse(localStorage.getItem('user')?? '') ;
+
       }
     )
     this.articleService.getMeilleuresVentes().subscribe(
       (res) => {
         this.meilleuresVentes = res;
-        this.user = JSON.parse(localStorage.getItem('user')?? '') ;
+
       }
     )
     this.articleService.getGenreFormation().subscribe(
       (res) => {
         this.genreFormation = res;
-        this.user = JSON.parse(localStorage.getItem('user')?? '') ;
+  
       }
     )
    
