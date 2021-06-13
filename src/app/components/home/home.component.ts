@@ -62,7 +62,7 @@ export class HomeComponent implements OnInit {
     )
     this.articleService.getNouveautes().subscribe(
       (res) => {
-        this.nouveautes = res;
+        this.nouveautes = res
       }
     )
     this.articleService.getMeilleuresVentes().subscribe(

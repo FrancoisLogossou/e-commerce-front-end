@@ -4,6 +4,5 @@ export interface Personne {
     prenomPersonne? : string,
     emailPersonne?  : string,
     mdpPersonne?    : string,
-    adressePersonne?   : string,
     typePersonne?   : string,
 }

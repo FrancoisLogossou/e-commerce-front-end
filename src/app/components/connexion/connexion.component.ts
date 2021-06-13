@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RoutesRecognized } from '@angular/router';
 import { filter, pairwise } from 'rxjs/operators';
 import { Personne } from 'src/app/interfaces/personne';
+import { User } from 'src/app/interfaces/user';
 import { ConnexionService } from 'src/app/services/connexion.service'
 
 
@@ -12,28 +13,42 @@ import { ConnexionService } from 'src/app/services/connexion.service'
 })
 export class ConnexionComponent implements OnInit {
   personne: Personne = {};
-  user = "";
+  user: User = {};
   erreur = "";
   previousUrl = "../";
   constructor(private auth: ConnexionService,
     private router: Router
   ) { }
-  // this.user = JSON.parse(localStorage.getItem('user')?? '') ;
+  
   ngOnInit(): void {
+    if (this.isConnected()) {
+      this.initialize();
+    }
 
 
   }
+
+  initialize(){
+    this.user = JSON.parse(localStorage.getItem('user') ?? '');
+  }
+  
   connexion() {
     this.auth.checkData(this.personne).subscribe(
       res => {
         if (res) {
           localStorage.setItem('user', JSON.stringify(res));
-          if (localStorage.getItem('url') == '/panier') {
-            this.router.navigateByUrl('/panier');
-          } else {
-            this.router.navigateByUrl('/home');
+          
+          if (this.user.typeUser == "administrateur") {
+            this.router.navigateByUrl('/admin');
+          } else  {
+            if (localStorage.getItem('url') == '/panier') {
+              this.router.navigateByUrl('/panier');
+            } else {
+              this.router.navigateByUrl('/home');
+            }
           }
-        } else {
+        }
+        else {
           this.erreur = "Identifiant ou mot incorrects, cet utilisateur n'existe pas"
         }
       }
@@ -41,12 +56,14 @@ export class ConnexionComponent implements OnInit {
   }
   deconnexion() {
     localStorage.removeItem('user');
-    this.router.navigateByUrl('/home');
   }
+ 
+
+
   isConnected() {
     if (localStorage.getItem('user')) {
       return true;
     }
-      return false;
+    return false;
   }
 }

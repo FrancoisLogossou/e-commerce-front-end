@@ -33,7 +33,6 @@ export class GestionDuPanierService {
       localStorage.setItem('panier', JSON.stringify(this.panier));
     }
   }
-
   recupererPanier() {
     this.temp = localStorage.getItem('panier') ?? '';
     this.panier = JSON.parse(this.temp);
