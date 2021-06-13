@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Article } from 'src/app/interfaces/article';
 import { Personne } from 'src/app/interfaces/personne';
 import { ArticleService } from 'src/app/services/article.service';
@@ -11,18 +12,46 @@ import { GestionDuPanierService } from 'src/app/services/gestion-du-panier.servi
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  // livres: Livre[] = [{ numISBN: 'ffezfzfzffez', titre: 'salut à tous', format: 'poche', refArticle: 1, imageArticle: 'https://static.fnac-static.com/multimedia/Images/FR/NR/62/ff/a9/11140962/1507-0/tsp20191031071127/Turquie-le-livre-de-cuisine.jpg' },
-  // { numISBN: 'aaaaaaaaaaa', titre: 'comment ça va', format: 'manteau', refArticle: 2, imageArticle : 'https://images-na.ssl-images-amazon.com/images/I/71uFN8LvWwL.jpg' },
-  // { numISBN: 'bbbbbbbb', titre: 'oui et toi', format: 'pantalon', refArticle: 3, imageArticle: 'https://www.lhommemoderne.fr/10462-19712-thickbox/livre-les-contes-de-perrault.jpg'}];
   personne: Personne = {};
   article: Article = {};
   articles: Article[] = [];
-  constructor(private articleService: ArticleService, private gestionDuPanier : GestionDuPanierService) { }
+  nouveautes: Article[] = [];
+  meilleuresVentes: Article[] = [];
+  genreFormation: Article[] = [];
+  
+  constructor(
+    private articleService: ArticleService,
+    private gestionDuPanier : GestionDuPanierService) { }
 
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    autoplay: true,
+    autoplayTimeout: 2000,
+    dots: false,
+    navSpeed: 700,
+    navText: ['<', '>'],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 4
+      }
+    },
+    nav: true
+  }
+  
   ngOnInit(): void {
     this.initialize();
-    this.personne = JSON.parse(localStorage.getItem('user') ?? ''); 
-    
   }
 
   initialize() {
@@ -31,6 +60,22 @@ export class HomeComponent implements OnInit {
         this.articles = res;
       }
     )
+    this.articleService.getNouveautes().subscribe(
+      (res) => {
+        this.nouveautes = res;
+      }
+    )
+    this.articleService.getMeilleuresVentes().subscribe(
+      (res) => {
+        this.meilleuresVentes = res;
+      }
+    )
+    this.articleService.getGenreFormation().subscribe(
+      (res) => {
+        this.genreFormation = res;
+      }
+    )
+   
   }
 
   ajouterAuPanier(refArticle: number, qte: string){
@@ -40,4 +85,3 @@ export class HomeComponent implements OnInit {
     });
   }
 }
-

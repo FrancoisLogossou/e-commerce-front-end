@@ -12,9 +12,9 @@ import { GestionDuPanierService } from 'src/app/services/gestion-du-panier.servi
 })
 export class RechercheComponent implements OnInit {
   toSearch = '';
+  auteur: Auteur = {};
   article: Article = {};
   articles: Article[] = [];
-  auteur: Auteur[] = [];
 
   constructor(private articleService: ArticleService,
     private gestionDuPanier: GestionDuPanierService,

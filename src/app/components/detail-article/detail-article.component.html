@@ -12,5 +12,5 @@
 <p>isbn: {{article.numISBN}}</p>
 <p>quantité en stock: {{article.qteStock}}</p>
 </div>
-<input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' #qte>
+<input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte>
 <button (click)='ajouterAuPanier(qte.value)'>ajouter au panier</button>

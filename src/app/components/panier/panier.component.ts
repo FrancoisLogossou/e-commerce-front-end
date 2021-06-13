@@ -19,6 +19,7 @@ export class PanierComponent implements OnInit {
   qtesArticles: number[] = [];
   prixTotal = 0;
   isValid: Boolean = true;
+  urlCourant = '';
 
   constructor(
     private gestionDuPanier: GestionDuPanierService,
@@ -48,19 +49,17 @@ export class PanierComponent implements OnInit {
   initialize() {
     this.ligneArticles = this.gestionDuPanier.recupererPanier();
     this.prixTotal = this.gestionDuPanier.calculPrixTotal();
+    this.urlCourant = this.router.url;
   }
 
   genererCmd() {
-    //this.initialize();
     this.isValid = true;
     this.refsArticles = this.gestionDuPanier.getRefsInPanier();
     this.qtesArticles = this.gestionDuPanier.getQtesInPanier();
     this.articleService.getAllArticles().subscribe(
       (res) => {
         this.allArticles = res;
-        // console.log(this.allArticles)
-        // console.log(this.qtesArticles)
-        // console.log(this.refsArticles)
+
         this.allArticles = this.allArticles.filter(elt => this.refsArticles.includes(elt.refArticle ?? 0))
         console.log(this.allArticles)
         for (let i = 0; i < this.refsArticles.length; i++) {
@@ -73,5 +72,9 @@ export class PanierComponent implements OnInit {
         }
       });
   }
-
+  stockerRoute(){
+    let route = this.router.url;
+    localStorage.setItem('url', route);
+    console.log(route);
+  }
 }

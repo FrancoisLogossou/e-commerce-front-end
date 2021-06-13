@@ -1,79 +1,83 @@
-<h1>Bienvenue {{ personne.prenomPersonne }} {{ personne.nomPersonne }} </h1>
-<h2>Nouveautés</h2>
-<hr>
-<div class="category-container d-flex flex-wrap justify-content-around">
-    <div class="d-flex flex-wrap justify-content-around rchchLivre">
-        <div *ngFor="let article of articles" class='home-article'>
+<owl-carousel-o [options]="customgit Options">
+
+    <ng-container *ngFor="let article of articles">
+        <ng-template carouselSlide [id ??]="article.refArticle" ??>
             <a [routerLink]='["/detailarticle", article.refArticle]'>
                 <img src={{article.imageArticle}} alt="">
             </a>
-            <div class="home-article-items">
-                <div class="home-article-title">
-                    <p class="d-flex flex-wrap"><span class="p"><span class="souligne">Titre</span> :</span> <span id="titreArticle">{{article.titreArticle}}</span></p>
-                    <p class="d-flex flex-wrap"><span class="p"><span class="souligne">Résumé</span> :</span> <span id="resumeArticle">{{article.resumeArticle}}</span></p>
-                    <p class="d-flex justify-content-between"><span><span class="souligne">Prix</span> :</span> <span id="puhtArticle">{{article.puht}} €</span></p>
-                </div>
-                <div class="ajoutPanier d-flex justify-content-center">
-                    <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' #qte>
-                    <button class="btn" (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i class="fas fa-shopping-cart"></i></button>
-                </div>
+        </ng-template>
+    </ng-container>
+
+</owl-carousel-o>
+<h2>Nouveautés</h2>
+<hr>
+<div class="category-container d-flex flex-wrap justify-content-center">
+    <div *ngFor="let article of nouveautes" class='home-article'>
+        <a [routerLink]='["/detailarticle", article.refArticle]'>
+            <img src={{article.imageArticle}} alt="">
+        </a>
+        <div class="home-article-items">
+            <div class="home-article-title">
+                <p>Titre: {{article.titreArticle}}</p>
+                <p>Format: {{article.puht}}</p>
             </div>
+            <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte>
+            <div class="select-quantity">
+            </div>
+            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i
+                    class="fas fa-shopping-cart"></i></button>
         </div>
     </div>
-    <div class="containerVoirOffre d-flex justify-content-center">
+    <a [routerLink]='["/voir-offres","nouveautes"]'>
         <button class="voir-offres">Voir toutes les offres <i class="fas fa-level-down-alt"></i> </button>
-    </div>  
+    </a>
 </div>
 
 <h2>Meilleures ventes</h2>
 <hr>
-<div class="category-container d-flex flex-wrap justify-content-around">
-    <div class="d-flex flex-wrap justify-content-around rchchLivre">
-        <div *ngFor="let article of articles" class='home-article'>
-            <a [routerLink]='["/detailarticle", article.refArticle]'>
-                <img src={{article.imageArticle}} alt="">
-            </a>
-            <div class="home-article-items">
-                <div class="home-article-title">
-                    <p class="d-flex flex-wrap"><span class="p"><span class="souligne">Titre</span> :</span> <span id="titreArticle">{{article.titreArticle}}</span></p>
-                    <p class="d-flex flex-wrap"><span class="p"><span class="souligne">Résumé</span> :</span> <span id="resumeArticle">{{article.resumeArticle}}</span></p>
-                    <p class="d-flex justify-content-between"><span><span class="souligne">Prix</span> :</span> <span id="puhtArticle">{{article.puht}} €</span></p>
-                </div>
-                <div class="ajoutPanier d-flex justify-content-center">
-                    <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' #qte>
-                    <button class="btn" (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i class="fas fa-shopping-cart"></i></button>
-                </div>
+<div class="category-container d-flex flex-wrap justify-content-center">
+    <div *ngFor="let article of meilleuresVentes" class='home-article'>
+        <a [routerLink]='["/detailarticle", article.refArticle]'>
+            <img src={{article.imageArticle}} alt="">
+        </a>
+        <div class="home-article-items">
+            <div class="home-article-title">
+                <p>Titre: {{article.titreArticle}}</p>
+                <p>Format: {{article.puht}}</p>
             </div>
+            <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte>
+            <div class="select-quantity">
+            </div>
+            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i
+                    class="fas fa-shopping-cart"></i></button>
         </div>
     </div>
-    <div class="containerVoirOffre d-flex justify-content-center">
+    <a [routerLink]='["/voir-offres","meilleures-ventes"]'>
         <button class="voir-offres">Voir toutes les offres <i class="fas fa-level-down-alt"></i> </button>
-    </div>  
+    </a>
 </div>
 
 
 <h2>Notre Sélection</h2>
 <hr>
-<div class="category-container d-flex flex-wrap justify-content-around">
-    <div class="d-flex flex-wrap justify-content-around rchchLivre">
-        <div *ngFor="let article of articles" class='home-article'>
-            <a [routerLink]='["/detailarticle", article.refArticle]'>
-                <img src={{article.imageArticle}} alt="">
-            </a>
-            <div class="home-article-items">
-                <div class="home-article-title">
-                    <p class="d-flex flex-wrap"><span class="p"><span class="souligne">Titre</span> :</span> <span id="titreArticle">{{article.titreArticle}}</span></p>
-                    <p class="d-flex flex-wrap"><span class="p"><span class="souligne">Résumé</span> :</span> <span id="resumeArticle">{{article.resumeArticle}}</span></p>
-                    <p class="d-flex justify-content-between"><span><span class="souligne">Prix</span> :</span> <span id="puhtArticle">{{article.puht}} €</span></p>
-                </div>
-                <div class="ajoutPanier d-flex justify-content-center">
-                    <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' #qte>
-                    <button class="btn" (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i class="fas fa-shopping-cart"></i></button>
-                </div>
+<div class="category-container d-flex flex-wrap justify-content-center">
+    <div *ngFor="let article of genreFormation" class='home-article'>
+        <a [routerLink]='["/detailarticle", article.refArticle]'>
+            <img src={{article.imageArticle}} alt="">
+        </a>
+        <div class="home-article-items">
+            <div class="home-article-title">
+                <p>Titre: {{article.titreArticle}}</p>
+                <p>Format: {{article.puht}}</p>
             </div>
+            <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte>
+            <div class="select-quantity">
+            </div>
+            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i
+                    class="fas fa-shopping-cart"></i></button>
         </div>
     </div>
-    <div class="containerVoirOffre d-flex justify-content-center">
+    <a [routerLink]='["/voir-offres","genre-formation"]'>
         <button class="voir-offres">Voir toutes les offres <i class="fas fa-level-down-alt"></i> </button>
-    </div>  
+    </a>
 </div>

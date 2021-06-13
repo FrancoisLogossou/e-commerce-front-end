@@ -16,10 +16,10 @@
         <a (click)='search(toSearch2)'>
             <i class="fas fa-search fa-lg loupe"></i>
         </a>
-        <a routerLink='/connexion'>
+        <a (click)="stockerRoute('/home')" routerLink='/connexion'>
             <i class="far fa-user fa-lg"></i>
         </a>
-        <a routerLink='/panier'>
+        <a (click)="stockerRoute('/panier')" routerLink='/panier'>
             <i class="fas fa-shopping-cart fa-lg"></i>
         </a>
     </div>

@@ -98,5 +98,6 @@ export class GestionDuPanierService {
     }
     return this.qtesArticlesInPanier;
   }
+  
 
 }

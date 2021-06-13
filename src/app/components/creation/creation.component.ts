@@ -30,6 +30,7 @@ export class CreationComponent implements OnInit {
           (res) => {
             this.personne = {};
             this.router.navigateByUrl('/home');
+            alert('votre compte a été créé avec succès');
           }
         );
       } else {

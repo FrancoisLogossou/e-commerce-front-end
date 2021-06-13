@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router, RoutesRecognized } from '@angular/router';
+import { filter, pairwise } from 'rxjs/operators';
 import { Personne } from 'src/app/interfaces/personne';
 import { ConnexionService } from 'src/app/services/connexion.service'
+
 
 @Component({
   selector: 'app-connexion',
@@ -10,25 +12,41 @@ import { ConnexionService } from 'src/app/services/connexion.service'
 })
 export class ConnexionComponent implements OnInit {
   personne: Personne = {};
+  user = "";
   erreur = "";
-  constructor(
-    private auth: ConnexionService,
+  previousUrl = "../";
+  constructor(private auth: ConnexionService,
     private router: Router
   ) { }
-
+  // this.user = JSON.parse(localStorage.getItem('user')?? '') ;
   ngOnInit(): void {
+
+
   }
-  connexion(){
+  connexion() {
     this.auth.checkData(this.personne).subscribe(
       res => {
         if (res) {
           localStorage.setItem('user', JSON.stringify(res));
-          this.router.navigateByUrl('/home');
+          if (localStorage.getItem('url') == '/panier') {
+            this.router.navigateByUrl('/panier');
+          } else {
+            this.router.navigateByUrl('/home');
+          }
         } else {
-          this.erreur = "L'adresse e-mail ou le mot de passe sont incorrects."
+          this.erreur = "Identifiant ou mot incorrects, cet utilisateur n'existe pas"
         }
       }
     )
   }
-
+  deconnexion() {
+    localStorage.removeItem('user');
+    this.router.navigateByUrl('/home');
+  }
+  isConnected() {
+    if (localStorage.getItem('user')) {
+      return true;
+    }
+      return false;
+  }
 }

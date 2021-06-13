@@ -16,7 +16,7 @@
                 <p class="d-flex justify-content-between"><span><span class="souligne">Prix</span> :</span> <span id="puhtArticle">{{article.puht}} €</span></p>
             </div>
             <div class="ajoutPanier d-flex justify-content-center">
-                <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' #qte>
+                <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte>
                 <button class="btn" (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i class="fas fa-shopping-cart"></i></button>
             </div>
         </div>
