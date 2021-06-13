@@ -1,4 +1,4 @@
-<owl-carousel-o [options]="customgit Options">
+<owl-carousel-o [options]="customOptions">
 
     <ng-container *ngFor="let article of articles">
         <ng-template carouselSlide [id ??]="article.refArticle" ??>
@@ -21,11 +21,12 @@
                 <p>Titre: {{article.titreArticle}}</p>
                 <p>Format: {{article.puht}}</p>
             </div>
-            <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte>
+            <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte readonly>
             <div class="select-quantity">
             </div>
-            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i
-                    class="fas fa-shopping-cart"></i></button>
+            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'>
+                <i class="fas fa-shopping-cart"></i>
+            </button>
         </div>
     </div>
     <a [routerLink]='["/voir-offres","nouveautes"]'>
@@ -45,11 +46,12 @@
                 <p>Titre: {{article.titreArticle}}</p>
                 <p>Format: {{article.puht}}</p>
             </div>
-            <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte>
+            <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte readonly>
             <div class="select-quantity">
             </div>
-            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i
-                    class="fas fa-shopping-cart"></i></button>
+            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'>
+                <i class="fas fa-shopping-cart"></i>
+            </button>
         </div>
     </div>
     <a [routerLink]='["/voir-offres","meilleures-ventes"]'>
@@ -70,11 +72,12 @@
                 <p>Titre: {{article.titreArticle}}</p>
                 <p>Format: {{article.puht}}</p>
             </div>
-            <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte>
+            <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte readonly>
             <div class="select-quantity">
             </div>
-            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i
-                    class="fas fa-shopping-cart"></i></button>
+            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'>
+                <i class="fas fa-shopping-cart"></i>
+            </button>
         </div>
     </div>
     <a [routerLink]='["/voir-offres","genre-formation"]'>
