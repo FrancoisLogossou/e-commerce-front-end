@@ -12,6 +12,7 @@ import { RechercheComponent } from './components/recherche/recherche.component';
 import { CreationComponent } from './components/creation/creation.component';
 import { CommandeComponent } from './components/commande/commande.component';
 import { AuthGuard } from './guards/auth.guard';
+import { VoirOffresComponent } from './components/voir-offres/voir-offres.component';
 
 const routes: Routes = [
   { path: "recherche/:toSearch", component: RechercheComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: "connexion", component: ConnexionComponent},
   { path: "creation", component: CreationComponent},
   { path: "home", component: HomeComponent},
+  { path: "voir-offres/:option", component: VoirOffresComponent }, 
   { path: "detailarticle/:refArticle", component: DetailArticleComponent},
   { path: "livre", component: LivreComponent},
   { path: "personne", component: PersonneComponent},

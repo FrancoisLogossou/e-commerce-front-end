@@ -18,6 +18,9 @@ export class HomeComponent implements OnInit {
   personne: Personne = {};
   article: Article = {};
   articles: Article[] = [];
+  nouveautes: Article[] = [];
+  meilleuresVentes: Article[] = [];
+  genreFormation: Article[] = [];
   user="";
   urlCourant ='';
   constructor(private articleService: ArticleService, private gestionDuPanier : GestionDuPanierService,  private router: Router) { }
@@ -35,7 +38,25 @@ export class HomeComponent implements OnInit {
         this.user = JSON.parse(localStorage.getItem('user')?? '') ;
       }
     )
-    // this.personne = JSON.parse(localStorage.getItem('user') ?? ''); 
+    this.articleService.getNouveautes().subscribe(
+      (res) => {
+        this.nouveautes = res;
+        this.user = JSON.parse(localStorage.getItem('user')?? '') ;
+      }
+    )
+    this.articleService.getMeilleuresVentes().subscribe(
+      (res) => {
+        this.meilleuresVentes = res;
+        this.user = JSON.parse(localStorage.getItem('user')?? '') ;
+      }
+    )
+    this.articleService.getGenreFormation().subscribe(
+      (res) => {
+        this.genreFormation = res;
+        this.user = JSON.parse(localStorage.getItem('user')?? '') ;
+      }
+    )
+   
   }
 
   ajouterAuPanier(refArticle: number, qte: string){

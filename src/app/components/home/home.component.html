@@ -2,7 +2,7 @@
 <h2>Nouveautés</h2>
 <hr>
 <div class="category-container d-flex flex-wrap justify-content-center">
-    <div *ngFor="let article of articles" class='home-article'>
+    <div *ngFor="let article of nouveautes" class='home-article'>
         <a [routerLink]='["/detailarticle", article.refArticle]'>
             <img src={{article.imageArticle}} alt="">
         </a>
@@ -14,16 +14,19 @@
             <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' #qte>
             <div class="select-quantity">
             </div>
-            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i class="fas fa-shopping-cart"></i></button>
+            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i
+                    class="fas fa-shopping-cart"></i></button>
         </div>
     </div>
-    <button class="voir-offres">Voir toutes les offres <i class="fas fa-level-down-alt"></i> </button>
+    <a [routerLink]='["/voir-offres","nouveautes"]'>
+        <button class="voir-offres">Voir toutes les offres <i class="fas fa-level-down-alt"></i> </button>
+    </a>
 </div>
 
 <h2>Meilleures ventes</h2>
 <hr>
 <div class="category-container d-flex flex-wrap justify-content-center">
-    <div *ngFor="let article of articles" class='home-article'>
+    <div *ngFor="let article of meilleuresVentes" class='home-article'>
         <a [routerLink]='["/detailarticle", article.refArticle]'>
             <img src={{article.imageArticle}} alt="">
         </a>
@@ -35,17 +38,20 @@
             <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' #qte>
             <div class="select-quantity">
             </div>
-            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i class="fas fa-shopping-cart"></i></button>
+            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i
+                    class="fas fa-shopping-cart"></i></button>
         </div>
     </div>
-    <button class="voir-offres">Voir toutes les offres <i class="fas fa-level-down-alt"></i> </button>
+    <a [routerLink]='["/voir-offres","meilleures-ventes"]'>
+        <button class="voir-offres">Voir toutes les offres <i class="fas fa-level-down-alt"></i> </button>
+    </a>
 </div>
 
 
 <h2>Notre Sélection</h2>
 <hr>
 <div class="category-container d-flex flex-wrap justify-content-center">
-    <div *ngFor="let article of articles" class='home-article'>
+    <div *ngFor="let article of genreFormation" class='home-article'>
         <a [routerLink]='["/detailarticle", article.refArticle]'>
             <img src={{article.imageArticle}} alt="">
         </a>
@@ -57,8 +63,11 @@
             <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' #qte>
             <div class="select-quantity">
             </div>
-            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i class="fas fa-shopping-cart"></i></button>
+            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i
+                    class="fas fa-shopping-cart"></i></button>
         </div>
     </div>
-    <button class="voir-offres">Voir toutes les offres <i class="fas fa-level-down-alt"></i> </button>
+    <a [routerLink]='["/voir-offres","genre-formation"]'>
+        <button class="voir-offres">Voir toutes les offres <i class="fas fa-level-down-alt"></i> </button>
+    </a>
 </div>
