@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
     touchDrag: false,
     pullDrag: false,
     autoplay: true,
-    autoplayTimeout: 2000,
+    autoplayTimeout: 2500,
     dots: false,
     navSpeed: 700,
     navText: ['<', '>'],
@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit {
       },
       940: {
         items: 4
-      }
+      },
     },
     nav: true
   }

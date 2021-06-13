@@ -1,14 +1,16 @@
-<owl-carousel-o [options]="customOptions">
-
-    <ng-container *ngFor="let article of articles">
-        <ng-template carouselSlide [id ??]="article.refArticle" ??>
-            <a [routerLink]='["/detailarticle", article.refArticle]'>
-                <img src={{article.imageArticle}} alt="">
-            </a>
-        </ng-template>
-    </ng-container>
-
-</owl-carousel-o>
+<div class="carrousel">
+    <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let article of articles">
+            <ng-template class="containerSlider" carouselSlide [id ??]="article.refArticle" ??>
+                <a [routerLink]='["/detailarticle", article.refArticle]'>
+                    <figure class="slider">
+                        <img src={{article.imageArticle}} alt="">
+                    </figure>
+                </a>
+            </ng-template>
+        </ng-container>
+    </owl-carousel-o>
+</div>
 <h2>Nouveautés</h2>
 <hr>
 <div class="category-container d-flex flex-wrap justify-content-center">
