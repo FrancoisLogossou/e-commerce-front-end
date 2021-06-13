@@ -58,3 +58,12 @@ img {
 .voir-offres:hover .fa-level-down-alt{
     color: white;
 }
+
+    .item{
+    margin: 10px;
+  }
+  #owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+  }

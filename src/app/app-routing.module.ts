@@ -12,6 +12,7 @@ import { RechercheComponent } from './components/recherche/recherche.component';
 import { CreationComponent } from './components/creation/creation.component';
 import { CommandeComponent } from './components/commande/commande.component';
 import { AuthGuard } from './guards/auth.guard';
+import { ConfirmationCommandeComponent } from './components/confirmation-commande/confirmation-commande.component';
 
 const routes: Routes = [
   { path: "recherche/:toSearch", component: RechercheComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: "personne", component: PersonneComponent},
   { path: "panier", component: PanierComponent},
   { path: "commande", component: CommandeComponent, canActivate: [AuthGuard]},
+  { path: "confirmation-commande", component: ConfirmationCommandeComponent},
   { path: "not-found", component: NotFoundComponent},
   { path: "", redirectTo: "/home", pathMatch: "full"},
   { path: "**", redirectTo: "/not-found"}

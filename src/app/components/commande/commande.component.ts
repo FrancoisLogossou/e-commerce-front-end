@@ -47,12 +47,11 @@ export class CommandeComponent implements OnInit {
             for (const elt of this.lignesCommande) {
               this.gestionCommande.updateStock((elt.article?.refArticle ?? 0), ((elt.article?.qteStock ?? 0) - (elt.qteArticle ?? 0))).subscribe(
                 (updateStockRes) => {
-
                 }
               )
             }
             localStorage.removeItem('panier');
-            this.router.navigateByUrl('/home')
+            this.router.navigateByUrl('/confirmation-commande')
           }
         )
       }

@@ -1,4 +1,14 @@
-<h1>Bienvenue {{ personne.prenomPersonne }} {{ personne.nomPersonne }} </h1>
+<owl-carousel-o [options]="customOptions">
+
+    <ng-container *ngFor="let article of articles">
+        <ng-template carouselSlide [id ??]="article.refArticle" ??>
+            <a [routerLink]='["/detailarticle", article.refArticle]'>
+                <img src={{article.imageArticle}} alt="">
+            </a>
+        </ng-template>
+    </ng-container>
+
+</owl-carousel-o>
 <h2>Nouveautés</h2>
 <hr>
 <div class="category-container d-flex flex-wrap justify-content-center">
@@ -14,7 +24,8 @@
             <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte>
             <div class="select-quantity">
             </div>
-            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i class="fas fa-shopping-cart"></i></button>
+            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i
+                    class="fas fa-shopping-cart"></i></button>
         </div>
     </div>
     <button class="voir-offres">Voir toutes les offres <i class="fas fa-level-down-alt"></i> </button>
@@ -35,7 +46,8 @@
             <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte>
             <div class="select-quantity">
             </div>
-            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i class="fas fa-shopping-cart"></i></button>
+            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i
+                    class="fas fa-shopping-cart"></i></button>
         </div>
     </div>
     <button class="voir-offres">Voir toutes les offres <i class="fas fa-level-down-alt"></i> </button>
@@ -57,7 +69,8 @@
             <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte>
             <div class="select-quantity">
             </div>
-            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i class="fas fa-shopping-cart"></i></button>
+            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i
+                    class="fas fa-shopping-cart"></i></button>
         </div>
     </div>
     <button class="voir-offres">Voir toutes les offres <i class="fas fa-level-down-alt"></i> </button>
