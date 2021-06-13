@@ -17,5 +17,13 @@ export class HeaderComponent implements OnInit {
 
     this.router.navigateByUrl('/recherche/' + toSearch2)
   }
+  stockerRoute(route: string){
+    //  route = this.router.url;
+    // if (localStorage.getItem('url') == '/panier') {
+      
+    // }
+    localStorage.setItem('url', route);
+    console.log(route);
+  }
   // [routerLink]='["/recherche", toSearch]'
 }

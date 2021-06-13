@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Article } from 'src/app/interfaces/article';
 import { Personne } from 'src/app/interfaces/personne';
 import { ArticleService } from 'src/app/services/article.service';
+
 import { GestionDuPanierService } from 'src/app/services/gestion-du-panier.service';
 
 @Component({
@@ -17,11 +18,13 @@ export class HomeComponent implements OnInit {
   personne: Personne = {};
   article: Article = {};
   articles: Article[] = [];
-  constructor(private articleService: ArticleService, private gestionDuPanier : GestionDuPanierService) { }
+  user="";
+  urlCourant ='';
+  constructor(private articleService: ArticleService, private gestionDuPanier : GestionDuPanierService,  private router: Router) { }
 
   ngOnInit(): void {
     this.initialize();
-    this.personne = JSON.parse(localStorage.getItem('user') ?? ''); 
+    
     
   }
 
@@ -29,8 +32,10 @@ export class HomeComponent implements OnInit {
     this.articleService.getAllArticles().subscribe(
       (res) => {
         this.articles = res;
+        this.user = JSON.parse(localStorage.getItem('user')?? '') ;
       }
     )
+    // this.personne = JSON.parse(localStorage.getItem('user') ?? ''); 
   }
 
   ajouterAuPanier(refArticle: number, qte: string){
@@ -39,5 +44,8 @@ export class HomeComponent implements OnInit {
       this.gestionDuPanier.ajouterAuPanier(this.article, +qte);
     });
   }
+  
+
+  
 }
 

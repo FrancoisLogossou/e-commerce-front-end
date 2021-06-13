@@ -19,6 +19,7 @@ export class PanierComponent implements OnInit {
   qtesArticles: number[] = [];
   prixTotal = 0;
   isValid: Boolean = true;
+  urlCourant = '';
 
   constructor(
     private gestionDuPanier: GestionDuPanierService,
@@ -48,6 +49,7 @@ export class PanierComponent implements OnInit {
   initialize() {
     this.ligneArticles = this.gestionDuPanier.recupererPanier();
     this.prixTotal = this.gestionDuPanier.calculPrixTotal();
+    this.urlCourant = this.router.url;
   }
 
   genererCmd() {
@@ -73,5 +75,9 @@ export class PanierComponent implements OnInit {
         }
       });
   }
-
+  stockerRoute(){
+    let route = this.router.url;
+    localStorage.setItem('url', route);
+    console.log(route);
+  }
 }
