@@ -4,11 +4,28 @@
 hr {
     height: 2px;
 }
-.category-container {
+figure {
+    margin-bottom: 0;
+}
+input~.loupe {
+    color: #ea6a0b;
+}
+.fa-search {
+    position: absolute;
+    right: 70px;
+}
+.categoryContainer {
     width: 100%;
 }
+.selectionAccueil {
+    width: 100%;
+    height: 280px;
+}
+.selectionAccueil img {
+    height: 100%;
+}
 .home-article {
-    margin-bottom: 50px;
+    margin: 0 20px 50px 20px;
     width: 250px;
     color: #fff;
     border-radius: 10px;
@@ -70,8 +87,42 @@ img {
 i {
     font-size: 1.2em;
 }
+input {
+   padding: 5px 50px 5px 20px;
+    width: 100%;
+    border: 1px solid #ea6a0b;
+    border-radius: 20px;
+    background-color: #EFF6F3;
+}
+@media screen and (max-width: 1459.99px) {
+    .home-article {
+        width: 20%;
+    }
+}
+@media screen and (max-width: 1286.99px) {
+    .home-article {
+        width: 25%;
+    }
+}
+@media screen and (max-width: 1050.99px) {
+    .home-article {
+        width: 30%;
+    }
+}
+@media screen and (max-width: 891.99px) {
+    .home-article {
+        width: 40%;
+    }
+}
+@media screen and (max-width: 693.99px) {
+    .home-article {
+        width: 50%;
+    }
+}
 @media screen and (max-width: 600px) {
     .masque {
-        display: block;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;;
     }
 }
