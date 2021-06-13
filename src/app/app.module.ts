@@ -18,6 +18,9 @@ import { RechercheComponent } from './components/recherche/recherche.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CreationComponent } from './components/creation/creation.component';
 import { CommandeComponent } from './components/commande/commande.component';
+import { ConfirmationCommandeComponent } from './components/confirmation-commande/confirmation-commande.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';import {trigger,state,style,animate,transition}from '@angular/animations';
 
 @NgModule({
   declarations: [
@@ -36,12 +39,15 @@ import { CommandeComponent } from './components/commande/commande.component';
     FooterComponent,
     CreationComponent,
     CommandeComponent,
+    ConfirmationCommandeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    CarouselModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

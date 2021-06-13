@@ -1,17 +1,21 @@
 <h2>Votre Panier</h2>
 <div class="ligne"></div>
-<div *ngFor="let ligne of ligneArticles" class= "article-panier">
-        <img src={{ligne.article!.imageArticle}} alt="">
-        <div class="d-flex quantity-item">
-            <p>Titre : {{ligne.article!.titreArticle ?? ''}}</p>
-            <input type="number"class="input-quantity" [value]='ligne.qteArticle' min='1' readonly>
-            <div class="select-quantity">
-                <button (click)='augQuantite(ligne.article!.refArticle ?? 0)' > + </button>
-                <button (click)='dimQuantite(ligne.article!.refArticle ?? 0)'> - </button>
-            </div>
-            <p>Prix unitaire : {{ligne.article!.puht ?? 0}}</p>
-            <i (click)='deleteArticle(ligne.article!.refArticle ?? 0)' class="far fa-times-circle"></i>
-        </div> 
+<div *ngFor="let ligne of ligneArticles" class="article-panier">
+    <img src={{ligne.article!.imageArticle}} alt="">
+    <div class="d-flex quantity-item">
+        <p>Titre : {{ligne.article!.titreArticle ?? ''}}</p>
+        <input type="number" class="input-quantity" [value]='ligne.qteArticle' min='1' readonly>
+        <div class="select-quantity">
+            <button (click)='augQuantite(ligne.article!.refArticle ?? 0)'> + </button>
+            <button (click)='dimQuantite(ligne.article!.refArticle ?? 0)'> - </button>
+        </div>
+        <p>Prix unitaire : {{ligne.article!.puht ?? 0}}</p>
+        <i (click)='deleteArticle(ligne.article!.refArticle ?? 0)' class="far fa-times-circle"></i>
+    </div>
 </div>
-<p>prix total : {{prixTotal}}</p>
-<button (click)='genererCmd()'>Valider le panier</button>
+
+<div *ngIf="ligneArticles.length > 0;else contenu_pas_bon">
+    <p>prix total : {{prixTotal}}</p>
+    <button (click)='genererCmd()'>Valider le panier</button>
+</div>
+<ng-template #contenu_pas_bon>Votre panier est vide, <a routerLink="/home">retourner à la page d'acceuil</a> </ng-template>
