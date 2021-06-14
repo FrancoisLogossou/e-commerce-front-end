@@ -1,20 +1,33 @@
-<h2>{{ option }}</h2>
+<h2>{{ option | titlecase }}</h2>
 <hr>
 <div class="category-container d-flex flex-wrap justify-content-center">
     <div *ngFor="let article of optionsArticles" class='home-article'>
         <a [routerLink]='["/detailarticle", article.refArticle]'>
-            <img src={{article.imageArticle}} alt="">
+            <figure class="selectionAccueil">
+                <img src={{article.imageArticle}} alt="{{article.titreArticle}}">
+            </figure>
         </a>
         <div class="home-article-items">
             <div class="home-article-title">
-                <p>Titre: {{article.titreArticle}}</p>
-                <p>Format: {{article.puht}}</p>
+                <p class="d-flex flex-wrap">
+                    <span class="p"><span class="souligne">Titre</span> : </span><span id="titreArticle">{{article.titreArticle}}</span>
+                </p>
+                <p class="d-flex flex-wrap">
+                    <span class="p"><span class="souligne">Résumé</span> : </span><span id="resumeArticle">{{article.resumeArticle}}</span>
+                </p>
+                <p class="d-flex justify-content-between">
+                    <span id="prix"><span class="souligne">Prix</span> :</span> <span id="prixArticle">{{article.puht}} €</span>
+                </p>
             </div>
-            <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' #qte>
-            <div class="select-quantity">
+            <div class="d-flex justify-content-around ajoutPanier">
+                <label>
+                    Qté :
+                </label>
+                <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte readonly>
+                <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'>
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
             </div>
-            <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'>
-                <i class="fas fa-shopping-cart"></i></button>
         </div>
     </div>
 </div>

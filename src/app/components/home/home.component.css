@@ -95,23 +95,7 @@ p:nth-child(2) {
 i {
     font-size: 1.2em;
 }
-.ajoutPanier {
-    margin-bottom: 20px;
-}
-.ajoutPanier input {
-    margin-right: 20px;
-    text-align: center;
-    border-radius: 7px;
-    width: 60px;
-}
-.btn {
-    background: transparent;
-    border: none;
-    color: #fff;
-}
-i {
-    font-size: 1.2em;
-}
+
 a:link { 
  text-decoration:none; 
 }
