@@ -8,12 +8,15 @@ import { LignePanier } from '../interfaces/ligne-panier';
 })
 export class GestionDuPanierService {
   panier: LignePanier[] = [];
+  prixTotalArticle = 0;
   prixTotal = 0;
   ligneTemp2: LignePanier = {};
   refsArticlesInPanier: number[] = [];
   qtesArticlesInPanier: number[] = [];
   temp = '';
-
+  temp2 = '';
+  qte = 0;
+  pu = 0;
 
   constructor() { }
 
@@ -60,6 +63,19 @@ export class GestionDuPanierService {
       this.ligneTemp2.qteArticle--;
     }
     localStorage.setItem('panier', JSON.stringify(this.panier));
+  }
+
+  calculPrixTotalArticle() {
+    this.prixTotalArticle = 0;
+    for (let index = 0; index < this.panier.length; index++) {
+      this.temp2 = localStorage.getItem('panier') ?? '';
+      this.panier = JSON.parse(this.temp2);
+      const liArticle = this.panier[index];
+      const qte =  liArticle.qteArticle;
+      const pu = liArticle.article!.puht;
+      this.prixTotalArticle = qte! * pu!;
+    }
+    return this.prixTotalArticle;
   }
 
   calculPrixTotal() {

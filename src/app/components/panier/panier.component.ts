@@ -18,6 +18,7 @@ export class PanierComponent implements OnInit {
   refsArticles: number[] = [];
   qtesArticles: number[] = [];
   prixTotal = 0;
+  prixTotalArticle = 0;
   isValid: Boolean = true;
   urlCourant = '';
 
@@ -48,6 +49,7 @@ export class PanierComponent implements OnInit {
   }
   initialize() {
     this.ligneArticles = this.gestionDuPanier.recupererPanier();
+    this.prixTotalArticle = this.gestionDuPanier.calculPrixTotalArticle();
     this.prixTotal = this.gestionDuPanier.calculPrixTotal();
     this.urlCourant = this.router.url;
   }

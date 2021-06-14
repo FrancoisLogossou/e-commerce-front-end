@@ -1,28 +1,119 @@
+table, tr {
+    width: 100%;
+}
+hr {
+    height: 2px;
+}
+tr hr {
+    margin-top: 20px;
+}
+tr {
+    display: inline-block;
+    width: 100%;
+}
+thead {
+    color: #fff;
+    background-color: #ea6a0b;
+}
+.image p {
+    width: 100%;
+}
+td {
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+}
+thead td:nth-child(1) {
+    width: 40%;
+}
+thead td:nth-child(2), td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+thead td:nth-child(3) {
+    width: 20%;
+    text-align: center;
+}
+tr td {
+    height: 70px;
+}
+tr td:nth-child(1) {
+    width: 40%;
+}
+tr td:nth-child(2), tr td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+tr td:nth-child(3) {
+    width: 30%;
+    text-align: center;
+}
+tr td:nth-child(5) {
+    width: 5%;
+    text-align: center;
+}
+#detailPanier {
+    margin-top: 15px;
+}
 img{
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 70px;
 }
 .article-panier{
     display: flex;
     width: 50%;
     justify-content: space-around;
-    
-}
-.quantity-item{
-    width: 20%;
-    height: 50%;
-    display: flex;
-    
 }
 .select-quantity{
     display: flex;
     flex-direction: column;
 }
-.input-quantity{
-    width: 100px;
-    height: 50%;
+.input-quantity {
+    margin: 0 20px;
+    width: 80px;
+    height: 30px;
+    border: none;
+    text-align: center;
 }
-
-.fa-times-circle{
-    color: #E3570E;
+input[type=number] {
+    -moz-appearance: textfield;
+}
+.btn {
+    border: none;
+    background-color: transparent;
+}
+i {
+    color: #ea6a0b;
+}
+.valPanier {
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 40px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #fff;
+    background-color: #ea6a0b;
+}
+figure {
+    margin: 0 15px 0 0;
+}
+figure ~ p {
+    margin-right: 5%;
+}
+#souligne {
+    text-decoration: underline;
+}
+@media screen and (max-width: 1280.99px) {
+    .input-quantity {
+        width: 50px;
+    }
+}
+@media screen and (max-width: 1129.99px) {
+    .input-quantity {
+        width: 20px;
+    }
+    thead td:nth-child(1), tr td:nth-child(1) {
+       width: 35%;
+    }
 }

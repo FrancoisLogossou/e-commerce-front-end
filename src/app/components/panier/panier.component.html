@@ -1,20 +1,62 @@
 <h2>Votre Panier</h2>
-<div class="ligne"></div>
-<div *ngFor="let ligne of ligneArticles" class="article-panier">
-    <img src={{ligne.article!.imageArticle}} alt="">
-    <div class="d-flex quantity-item">
-        <p>Titre : {{ligne.article!.titreArticle ?? ''}}</p>
-        <input type="number" class="input-quantity" [value]='ligne.qteArticle' min='1' readonly>
-        <div class="select-quantity">
-            <button (click)='augQuantite(ligne.article!.refArticle ?? 0)'> + </button>
-            <button (click)='dimQuantite(ligne.article!.refArticle ?? 0)'> - </button>
+<hr>
+<table>
+    <thead>
+        <td>Article(s)</td>
+        <td>Prix Unitaire</td>
+        <td>Quantité</td>
+        <td>Prix Total</td>
+        <td> </td>
+    </thead>
+</table>
+<div id="detailPanier">
+    <table>
+        <div *ngFor="let ligne of ligneArticles" class="articlePanier">
+            <tr class="d-flex">
+                <td class="d-flex image">
+                    <figure>
+                        <img src={{ligne.article!.imageArticle}} alt="{{ligne.article!.titreArticle ?? ''}}">
+                    </figure>
+                    <p>
+                        <span><span id="souligne"> Titre</span> : </span>{{ligne.article!.titreArticle ?? ''}}
+                    </p>
+                </td>
+                <td>
+                    {{ligne.article!.puht ?? 0}} €
+                </td>
+                <td>
+                    <button class="btn" (click)='augQuantite(ligne.article!.refArticle ?? 0)'>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <input type="number" class="input-quantity" [value]='ligne.qteArticle' min='1' readonly>
+                    <button class="btn" (click)='dimQuantite(ligne.article!.refArticle ?? 0)'>
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </td>
+                <td>
+                    {{prixTotalArticle}} €
+                </td>
+                <td>
+                    <i (click)='deleteArticle(ligne.article!.refArticle ?? 0)' class="fas fa-trash-alt"></i>
+                </td>
+            </tr>
+            <hr>
         </div>
-        <p>Prix unitaire : {{ligne.article!.puht ?? 0}}</p>
-        <i (click)='deleteArticle(ligne.article!.refArticle ?? 0)' class="far fa-times-circle"></i>
-    </div>
+    </table>
 </div>
 <div *ngIf="ligneArticles.length > 0;else contenu_pas_bon">
-    <p>prix total : {{prixTotal}}</p>
-    <button (click)='genererCmd()'>Valider le panier</button>
+    <table>
+        <tr class="d-flex">
+            <td></td>
+            <td></td>
+            <td>Prix Total TTC à Payer : </td>
+            <td>{{prixTotal}} €</td>
+            <td></td>
+        </tr>
+    </table>
+    <div id="buton" class="d-flex justify-content-center">
+        <button class="valPanier" (click)='genererCmd()'>Valider le panier</button>
+    </div>
+    
 </div>
 <ng-template #contenu_pas_bon>Votre panier est vide, <a routerLink="/home">retourner à la page d'acceuil</a> </ng-template>
