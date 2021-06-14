@@ -49,7 +49,6 @@ export class PanierComponent implements OnInit {
   }
   initialize() {
     this.ligneArticles = this.gestionDuPanier.recupererPanier();
-    this.prixTotalArticle = this.gestionDuPanier.calculPrixTotalArticle();
     this.prixTotal = this.gestionDuPanier.calculPrixTotal();
     this.urlCourant = this.router.url;
   }

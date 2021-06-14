@@ -1,14 +1,47 @@
 <h2>Votre Commande</h2>
-<div class="ligne"></div>
-<div *ngFor="let ligne of lignesCommande" class= "article-panier">
-        <img src={{ligne.article!.imageArticle}} alt="">
-        <div class="d-flex flex-column quantity-item">
-            <p>Titre : {{ligne.article!.titreArticle ?? ''}}</p>
-            <p>qté : {{ligne.qteArticle}}</p>
-            <div class="select-quantity">
-            </div>
-            <p>Prix unitaire : {{ligne.article!.puht ?? 0}}</p>
-        </div> 
+<hr>
+<table>
+    <thead>
+        <td>Article(s)</td>
+        <td>Prix Unitaire</td>
+        <td>Quantité</td>
+        <td>Prix Total</td>
+    </thead>
+</table>
+<div id="detailPanier">
+    <table>
+        <div *ngFor="let ligne of lignesCommande" class= "articlePanier">
+            <tr class="d-flex">
+                <td class="d-flex image">
+                    <figure>
+                        <img src={{ligne.article!.imageArticle}} alt="{{ligne.article!.titreArticle ?? ''}}">
+                    </figure>
+                    <p>
+                        <span><span id="souligne"> Titre</span> : </span>{{ligne.article!.titreArticle ?? ''}}
+                    </p>
+                </td>
+                <td>
+                    {{ligne.article!.puht ?? 0}} €
+                </td>
+                <td>
+                    <input type="number" class="input-quantity" [value]='ligne.qteArticle' min='1' readonly>
+                </td>
+                <td>
+                    {{(ligne.article!.puht ?? 0) * (ligne.qteArticle ?? 0)}} €
+                </td>
+            </tr>
+            <hr>
+        </div>
+    </table>
+    <table>
+        <tr class="d-flex">
+            <td></td>
+            <td></td>
+            <td>Prix Total TTC à Payer : </td>
+            <td>{{prixTotal}} €</td>
+        </tr>
+    </table>
 </div>
-<p>prix total : {{prixTotal}}</p>
-<button (click)='genererCmd()'>Valider la commande</button>
+<div id="buton" class="d-flex justify-content-center">
+    <button class="valPanier" (click)='genererCmd()'>Valider la commande</button>
+</div>

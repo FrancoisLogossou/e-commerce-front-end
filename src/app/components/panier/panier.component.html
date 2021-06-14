@@ -34,7 +34,7 @@
                     </button>
                 </td>
                 <td>
-                    {{prixTotalArticle}} €
+                    {{(ligne.article!.puht ?? 0) * (ligne.qteArticle ?? 0)}} €
                 </td>
                 <td>
                     <i (click)='deleteArticle(ligne.article!.refArticle ?? 0)' class="fas fa-trash-alt"></i>
@@ -59,4 +59,9 @@
     </div>
     
 </div>
-<ng-template #contenu_pas_bon>Votre panier est vide, <a routerLink="/home">retourner à la page d'acceuil</a> </ng-template>
+<ng-template #contenu_pas_bon>
+    <p>
+        Votre panier est vide.
+    </p>
+    <a routerLink="/home">retourner à la page d'acceuil</a>
+</ng-template>
