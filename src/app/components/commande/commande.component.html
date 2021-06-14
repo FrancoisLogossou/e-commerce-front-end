@@ -21,13 +21,13 @@
                     </p>
                 </td>
                 <td>
-                    {{ligne.article!.puht ?? 0}} €
+                    {{ (ligne.article!.puht ?? 0).toFixed(2)}} €
                 </td>
                 <td>
                     <input type="number" class="input-quantity" [value]='ligne.qteArticle' min='1' readonly>
                 </td>
                 <td>
-                    {{(ligne.article!.puht ?? 0) * (ligne.qteArticle ?? 0)}} €
+                    {{((ligne.article!.puht ?? 0) * (ligne.qteArticle ?? 0)).toFixed(2)}} €
                 </td>
             </tr>
             <hr>
@@ -38,7 +38,7 @@
             <td></td>
             <td></td>
             <td>Prix Total TTC à Payer : </td>
-            <td>{{prixTotal}} €</td>
+            <td>{{(prixTotal).toFixed(2)}} €</td>
         </tr>
     </table>
 </div>

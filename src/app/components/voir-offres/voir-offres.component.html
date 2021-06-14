@@ -16,7 +16,7 @@
                     <span class="p"><span class="souligne">Résumé</span> : </span><span id="resumeArticle">{{article.resumeArticle}}</span>
                 </p>
                 <p class="d-flex justify-content-between">
-                    <span id="prix"><span class="souligne">Prix</span> :</span> <span id="prixArticle">{{article.puht}} €</span>
+                    <span id="prix"><span class="souligne">Prix</span> :</span> <span id="prixArticle">{{(article.puht!).toFixed(2)}} €</span>
                 </p>
             </div>
             <div class="d-flex justify-content-around ajoutPanier">

@@ -16,7 +16,7 @@
                 <p class="d-flex flex-wrap"><span class="p"><span class="souligne">Titre</span> :</span> <span id="titreArticle">{{article.titreArticle}}</span></p>
                 <p class="d-flex flex-wrap"><span class="p"><span class="souligne">Auteur(s)</span> :</span> <span id="auteurArticle"></span></p>
                 <p class="d-flex flex-wrap"><span class="p"><span class="souligne">Résumé</span> :</span> <span id="resumeArticle">{{article.resumeArticle}}</span></p>
-                <p class="d-flex justify-content-between"><span><span class="souligne">Prix</span> :</span> <span id="puhtArticle">{{article.puht}} €</span></p>
+                <p class="d-flex justify-content-between"><span><span class="souligne">Prix</span> :</span> <span id="puhtArticle">{{(article.puht!).toFixed(2)}} €</span></p>
             </div>
             <div class="d-flex justify-content-around ajoutPanier">
                 <label>

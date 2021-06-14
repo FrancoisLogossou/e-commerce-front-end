@@ -22,7 +22,7 @@
                     </p>
                 </td>
                 <td>
-                    {{ligne.article!.puht ?? 0}} €
+                    {{ (ligne.article!.puht ?? 0).toFixed(2) }} €
                 </td>
                 <td>
                     <button class="btn" (click)='augQuantite(ligne.article!.refArticle ?? 0)'>
@@ -34,7 +34,7 @@
                     </button>
                 </td>
                 <td>
-                    {{(ligne.article!.puht ?? 0) * (ligne.qteArticle ?? 0)}} €
+                    {{((ligne.article!.puht ?? 0) * (ligne.qteArticle ?? 0)).toFixed(2)}} €
                 </td>
                 <td>
                     <i (click)='deleteArticle(ligne.article!.refArticle ?? 0)' class="fas fa-trash-alt"></i>
@@ -50,7 +50,7 @@
             <td></td>
             <td></td>
             <td>Prix Total TTC à Payer : </td>
-            <td>{{prixTotal}} €</td>
+            <td>{{ (prixTotal).toFixed(2) }} €</td>
             <td></td>
         </tr>
     </table>
