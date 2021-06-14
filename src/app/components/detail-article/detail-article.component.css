@@ -1,19 +1,53 @@
 h2 {
-    background: #FFFFFF;
     font-family: Segoe UI;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
-    color: #E3570E;
+    color: #ea6a0b;
+    margin:0 34px;
+    text-align: center;
 }
-
-div.ligne{
-    border-bottom: 1px solid #707070;
+hr {
+    height: 2px;
 }
-p{
+#bookImage {
+    width: 30%;
+}
+#bookDetails {
+    width: 70%;
+}
+figure {
+    margin: 10%;
+}
+#bookInfo, #bookCommande {
+    margin: 40px;
+}
+#bookCommande p {
+    display: inline-flex;
+    width: 90px;
+}
+img {
+    width: 100%;
+    border-radius: 10px;
+}
+.souligne {
+    text-decoration: underline;
+}
+input {
+    margin-right: 20px;
+    text-align: center;
+    border-radius: 7px;
+    width:70px;
+}
+.btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+}
+i {
+    font-size: 1.2em;
+    color:#ea6a0b;
+}
+#resumeCentre {
     display: inline-block;
-}
-.book-images{
-    background: darkgray;
-    display: flex;
-    margin: 0;
+    text-align: justify;
 }

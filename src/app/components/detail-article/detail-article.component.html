@@ -1,16 +1,34 @@
 <h2>Détail article</h2>
-<div class="ligne"></div>
-<div class= "book-details">
-<figure class="book-images row">
-    <img src={{article.imageArticle}} alt="" class="col-9 h-100 p-0">
-    <div class="col-3 h-20">img2</div>
-    <div class="col-3 h-20">img3</div>
-    <div class="col-3 h-20">img4</div>
-</figure>
-<p>Résumé: {{article.resumeArticle}} </p>
-<p>prix : {{article.puht}}</p>
-<p>isbn: {{article.numISBN}}</p>
-<p>quantité en stock: {{article.qteStock}}</p>
+<hr>
+<div class="bookDetails d-flex flex-wrap justify-content-center">
+    <div id="bookImage">
+        <figure>
+            <img src={{article.imageArticle}} alt="" >
+        </figure>
+    </div>
+    <div id="bookDetails">
+        <div id="bookInfo">
+            <p>
+                <span><span class="souligne">ISBN</span> : </span>{{article.numISBN}}
+            </p>
+            <p>
+                <span><span class="souligne">Résumé</span> : </span><span id="resumeCentre">{{article.resumeArticle}}</span>
+            </p>
+            <p>
+                <span><span class="souligne">quantité en stock</span> : </span>{{article.qteStock}}
+            </p>
+            <p>
+                <span><span class="souligne">prix</span> : </span>{{article.puht}} €
+            </p>
+        </div>
+        <div id="bookCommande">
+            <p>
+                <span><span class="souligne">Quantité</span> :</span>
+            </p>
+            <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte>
+            <button class="btn" (click)='ajouterAuPanier(qte.value)'>
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+    </div>
 </div>
-<input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte>
-<button (click)='ajouterAuPanier(qte.value)'>ajouter au panier</button>

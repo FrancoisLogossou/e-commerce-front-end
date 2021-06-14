@@ -70,6 +70,7 @@ img {
     width: 100%;
     border-radius: 10px 10px 0 0;
 }
+
 .ajoutPanier {
     margin-bottom: 20px;
 }
@@ -87,13 +88,7 @@ img {
 i {
     font-size: 1.2em;
 }
-input {
-   padding: 5px 50px 5px 20px;
-    width: 100%;
-    border: 1px solid #ea6a0b;
-    border-radius: 20px;
-    background-color: #EFF6F3;
-}
+
 @media screen and (max-width: 1459.99px) {
     .home-article {
         width: 20%;

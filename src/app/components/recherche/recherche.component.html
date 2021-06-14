@@ -18,8 +18,11 @@
                 <p class="d-flex flex-wrap"><span class="p"><span class="souligne">Résumé</span> :</span> <span id="resumeArticle">{{article.resumeArticle}}</span></p>
                 <p class="d-flex justify-content-between"><span><span class="souligne">Prix</span> :</span> <span id="puhtArticle">{{article.puht}} €</span></p>
             </div>
-            <div class="ajoutPanier d-flex justify-content-center">
-                <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte>
+            <div class="d-flex justify-content-around ajoutPanier">
+                <label>
+                    Qté :
+                </label>
+                <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte readonly>
                 <button class="btn" (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'><i class="fas fa-shopping-cart"></i></button>
             </div>
         </div>
