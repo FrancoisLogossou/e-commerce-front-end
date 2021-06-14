@@ -37,7 +37,7 @@
                     <label>
                         Qté :
                     </label>
-                    <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte readonly>
+                    <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' onkeydown="return false" #qte>
                     <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'>
                         <i class="fas fa-shopping-cart"></i>
                     </button>
@@ -77,7 +77,7 @@
                     <label>
                         Qté :
                     </label>
-                    <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte readonly>
+                    <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' onkeydown="return false" #qte>
                     <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'>
                         <i class="fas fa-shopping-cart"></i>
                     </button>
@@ -92,7 +92,7 @@
     </div>
 </div>
 <div class="categoryContainer">
-    <h2>Notre Sélection</h2>
+    <h2>Formation</h2>
     <hr>
     <div class=" d-flex flex-wrap justify-content-around">
         <div *ngFor="let article of genreFormation" class='home-article'>
@@ -117,7 +117,7 @@
                     <label>
                         Qté :
                     </label>
-                    <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' #qte readonly>
+                    <input type="number" class="input-quantity" min='1' max='{{article.qteStock}}' [defaultValue]='1' onkeydown="return false" #qte>
                     <button (click)='ajouterAuPanier(article.refArticle ?? 0, qte.value)'>
                         <i class="fas fa-shopping-cart"></i>
                     </button>

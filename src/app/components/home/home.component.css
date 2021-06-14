@@ -17,9 +17,9 @@
 .categoryContainer {
     margin-top: 50px;
 }
-input[type=number] {
+/* input[type=number] {
     -moz-appearance: textfield;
-}
+} */
 h2 {
     font-family: Segoe UI;
     font-size: 25px;

@@ -14,6 +14,9 @@
             <p>
                 <span><span class="souligne">Résumé</span> : </span><span id="resumeCentre">{{article.resumeArticle}}</span>
             </p>
+            <p *ngFor="let auteur of article.auteurs">
+                <span><span class="souligne">Auteur</span> : </span><span id="resumeCentre">{{auteur.nomAuteur | titlecase}}</span>
+            </p>
             <p>
                 <span><span class="souligne">quantité en stock</span> : </span>{{article.qteStock}}
             </p>

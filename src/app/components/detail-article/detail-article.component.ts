@@ -24,7 +24,7 @@ export class DetailArticleComponent implements OnInit {
         this.refArticle = value.get('refArticle') ?? '';
         this.articleService.getOneArticleById(this.refArticle).subscribe((res) => {
           this.article = res; 
-          // console.log(this.article.resumeArticle)
+          console.log(this.article.auteurs)
           // console.log(this.article.numISBN)
         });
       });
